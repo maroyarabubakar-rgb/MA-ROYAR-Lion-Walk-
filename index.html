@@ -1,5 +1,178 @@
-<div class="brand-box">
-  <div class="logo">🦁</div>
-  <div class="brand-name">MA ROYAR LION WALK</div>
-  <div class="brand-tag">ROYAL • CONFIDENCE • OUTFIT</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MA ROYAR LION WALK</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#fff;
+    }
+
+    /* LOGO HEADER */
+    .logo{
+      text-align:center;
+      padding:25px 10px;
+      border-bottom:1px solid #eee;
+    }
+
+    .logo h1{
+      margin:0;
+      font-size:26px;
+      letter-spacing:5px;
+    }
+
+    .logo p{
+      font-size:12px;
+      color:#666;
+      letter-spacing:3px;
+    }
+
+    /* TITLE */
+    .title{
+      margin:30px 20px 10px;
+      font-size:14px;
+      font-weight:bold;
+      letter-spacing:3px;
+      border-left:4px solid black;
+      padding-left:10px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+      padding:10px 20px;
+    }
+
+    .card{
+      border:1px solid #eee;
+      border-radius:10px;
+      overflow:hidden;
+      text-align:center;
+      cursor:pointer;
+    }
+
+    .card img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+    }
+
+    .name{
+      font-size:12px;
+      font-weight:bold;
+      letter-spacing:2px;
+      margin:8px 0;
+    }
+
+    button{
+      width:90%;
+      margin-bottom:10px;
+      padding:8px;
+      border:none;
+      background:black;
+      color:white;
+      border-radius:5px;
+      cursor:pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- LOGO -->
+<div class="logo">
+  <h1>🦁 MA ROYAR</h1>
+  <p>LION WALK • ROYAL CONFIDENCE OUTFIT</p>
 </div>
+
+<!-- SHIRTS -->
+<div class="title">SHIRTS COLLECTION</div>
+<div class="grid">
+
+  <div class="card" onclick="openP('SHIRT 01','https://source.unsplash.com/300x300/?shirt,black')">
+    <img src="https://source.unsplash.com/300x300/?shirt,black">
+    <div class="name">SHIRT 01</div>
+  </div>
+
+  <div class="card" onclick="openP('SHIRT 02','https://source.unsplash.com/300x300/?shirt,white')">
+    <img src="https://source.unsplash.com/300x300/?shirt,white">
+    <div class="name">SHIRT 02</div>
+  </div>
+
+  <div class="card" onclick="openP('SHIRT 03','https://source.unsplash.com/300x300/?shirt,blue')">
+    <img src="https://source.unsplash.com/300x300/?shirt,blue">
+    <div class="name">SHIRT 03</div>
+  </div>
+
+  <div class="card" onclick="openP('SHIRT 04','https://source.unsplash.com/300x300/?shirt,formal')">
+    <img src="https://source.unsplash.com/300x300/?shirt,formal">
+    <div class="name">SHIRT 04</div>
+  </div>
+
+</div>
+
+<!-- PANTS -->
+<div class="title">DRESSING PANTS</div>
+<div class="grid">
+
+  <div class="card" onclick="openP('PANT 01','https://source.unsplash.com/300x300/?pants,formal')">
+    <img src="https://source.unsplash.com/300x300/?pants,formal">
+    <div class="name">PANT 01</div>
+  </div>
+
+  <div class="card" onclick="openP('PANT 02','https://source.unsplash.com/300x300/?trousers,black')">
+    <img src="https://source.unsplash.com/300x300/?trousers,black">
+    <div class="name">PANT 02</div>
+  </div>
+
+  <div class="card" onclick="openP('PANT 03','https://source.unsplash.com/300x300/?jeans,men')">
+    <img src="https://source.unsplash.com/300x300/?jeans,men">
+    <div class="name">PANT 03</div>
+  </div>
+
+  <div class="card" onclick="openP('PANT 04','https://source.unsplash.com/300x300/?formal,pants')">
+    <img src="https://source.unsplash.com/300x300/?formal,pants">
+    <div class="name">PANT 04</div>
+  </div>
+
+</div>
+
+<!-- WATCHES -->
+<div class="title">WATCH COLLECTION</div>
+<div class="grid">
+
+  <div class="card" onclick="openP('WATCH 01','https://source.unsplash.com/300x300/?watch,luxury')">
+    <img src="https://source.unsplash.com/300x300/?watch,luxury">
+    <div class="name">WATCH 01</div>
+  </div>
+
+  <div class="card" onclick="openP('WATCH 02','https://source.unsplash.com/300x300/?watch,classic')">
+    <img src="https://source.unsplash.com/300x300/?watch,classic">
+    <div class="name">WATCH 02</div>
+  </div>
+
+  <div class="card" onclick="openP('WATCH 03','https://source.unsplash.com/300x300/?watch,modern')">
+    <img src="https://source.unsplash.com/300x300/?watch,modern">
+    <div class="name">WATCH 03</div>
+  </div>
+
+  <div class="card" onclick="openP('WATCH 04','https://source.unsplash.com/300x300/?watch,style')">
+    <img src="https://source.unsplash.com/300x300/?watch,style">
+    <div class="name">WATCH 04</div>
+  </div>
+
+</div>
+
+<script>
+function openP(name,img){
+  window.location.href = "product.html?item=" + name + "&img=" + img;
+}
+</script>
+
+</body>
+  </html>
