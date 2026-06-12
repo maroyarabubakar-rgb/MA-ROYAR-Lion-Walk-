@@ -1,178 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MA ROYAR LION WALK</title>
+<title>MA ROYAR LION WALK</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial;
-      background:#fff;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fff;
+  color:#111;
+}
 
-    /* LOGO HEADER */
-    .logo{
-      text-align:center;
-      padding:25px 10px;
-      border-bottom:1px solid #eee;
-    }
+.logo{
+  text-align:center;
+  padding:30px 15px;
+  border-bottom:1px solid #eee;
+}
 
-    .logo h1{
-      margin:0;
-      font-size:26px;
-      letter-spacing:5px;
-    }
+.logo h1{
+  margin:0;
+  letter-spacing:5px;
+  font-size:28px;
+}
 
-    .logo p{
-      font-size:12px;
-      color:#666;
-      letter-spacing:3px;
-    }
+.logo p{
+  color:#666;
+  letter-spacing:3px;
+  font-size:12px;
+}
 
-    /* TITLE */
-    .title{
-      margin:30px 20px 10px;
-      font-size:14px;
-      font-weight:bold;
-      letter-spacing:3px;
-      border-left:4px solid black;
-      padding-left:10px;
-    }
+.title{
+  margin:35px 20px 15px;
+  font-size:16px;
+  font-weight:bold;
+  letter-spacing:3px;
+  border-left:4px solid #000;
+  padding-left:10px;
+}
 
-    /* GRID */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:15px;
-      padding:10px 20px;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+  padding:0 20px 20px;
+}
 
-    .card{
-      border:1px solid #eee;
-      border-radius:10px;
-      overflow:hidden;
-      text-align:center;
-      cursor:pointer;
-    }
+.card{
+  border:1px solid #eee;
+  border-radius:10px;
+  overflow:hidden;
+  text-align:center;
+  background:#fff;
+}
 
-    .card img{
-      width:100%;
-      height:140px;
-      object-fit:cover;
-    }
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
 
-    .name{
-      font-size:12px;
-      font-weight:bold;
-      letter-spacing:2px;
-      margin:8px 0;
-    }
+.name{
+  font-weight:bold;
+  padding:12px;
+  font-size:13px;
+  letter-spacing:1px;
+}
 
-    button{
-      width:90%;
-      margin-bottom:10px;
-      padding:8px;
-      border:none;
-      background:black;
-      color:white;
-      border-radius:5px;
-      cursor:pointer;
-    }
-
-  </style>
+.btn{
+  display:block;
+  margin:0 10px 12px;
+  padding:10px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+</style>
 </head>
 
 <body>
 
-<!-- LOGO -->
 <div class="logo">
-  <h1>🦁 MA ROYAR</h1>
-  <p>LION WALK • ROYAL CONFIDENCE OUTFIT</p>
+  <h1>🦁 MA ROYAR LION WALK</h1>
+  <p>ROYAL • CONFIDENCE • OUTFIT</p>
 </div>
 
 <!-- SHIRTS -->
 <div class="title">SHIRTS COLLECTION</div>
+
 <div class="grid">
 
-  <div class="card" onclick="openP('SHIRT 01','https://source.unsplash.com/300x300/?shirt,black')">
-    <img src="https://source.unsplash.com/300x300/?shirt,black">
-    <div class="name">SHIRT 01</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?1">
+<div class="name">ROYAL BLACK SHIRT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('SHIRT 02','https://source.unsplash.com/300x300/?shirt,white')">
-    <img src="https://source.unsplash.com/300x300/?shirt,white">
-    <div class="name">SHIRT 02</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?2">
+<div class="name">LION WHITE SHIRT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('SHIRT 03','https://source.unsplash.com/300x300/?shirt,blue')">
-    <img src="https://source.unsplash.com/300x300/?shirt,blue">
-    <div class="name">SHIRT 03</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?3">
+<div class="name">CONFIDENCE BLUE SHIRT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('SHIRT 04','https://source.unsplash.com/300x300/?shirt,formal')">
-    <img src="https://source.unsplash.com/300x300/?shirt,formal">
-    <div class="name">SHIRT 04</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?4">
+<div class="name">SIGNATURE FORMAL SHIRT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
 </div>
 
-<!-- PANTS -->
-<div class="title">DRESSING PANTS</div>
+<!-- DRESSING PANTS -->
+<div class="title">DRESSING PANTS COLLECTION</div>
+
 <div class="grid">
 
-  <div class="card" onclick="openP('PANT 01','https://source.unsplash.com/300x300/?pants,formal')">
-    <img src="https://source.unsplash.com/300x300/?pants,formal">
-    <div class="name">PANT 01</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?5">
+<div class="name">ROYAL FIT PANT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('PANT 02','https://source.unsplash.com/300x300/?trousers,black')">
-    <img src="https://source.unsplash.com/300x300/?trousers,black">
-    <div class="name">PANT 02</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?6">
+<div class="name">CLASSIC FORMAL PANT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('PANT 03','https://source.unsplash.com/300x300/?jeans,men')">
-    <img src="https://source.unsplash.com/300x300/?jeans,men">
-    <div class="name">PANT 03</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?7">
+<div class="name">PREMIUM DRESS PANT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('PANT 04','https://source.unsplash.com/300x300/?formal,pants')">
-    <img src="https://source.unsplash.com/300x300/?formal,pants">
-    <div class="name">PANT 04</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?8">
+<div class="name">SIGNATURE BLACK PANT</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
 </div>
 
 <!-- WATCHES -->
 <div class="title">WATCH COLLECTION</div>
+
 <div class="grid">
 
-  <div class="card" onclick="openP('WATCH 01','https://source.unsplash.com/300x300/?watch,luxury')">
-    <img src="https://source.unsplash.com/300x300/?watch,luxury">
-    <div class="name">WATCH 01</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?9">
+<div class="name">ROYAL WATCH</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('WATCH 02','https://source.unsplash.com/300x300/?watch,classic')">
-    <img src="https://source.unsplash.com/300x300/?watch,classic">
-    <div class="name">WATCH 02</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?10">
+<div class="name">LION WATCH</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('WATCH 03','https://source.unsplash.com/300x300/?watch,modern')">
-    <img src="https://source.unsplash.com/300x300/?watch,modern">
-    <div class="name">WATCH 03</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?11">
+<div class="name">PRESTIGE WATCH</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
-  <div class="card" onclick="openP('WATCH 04','https://source.unsplash.com/300x300/?watch,style')">
-    <img src="https://source.unsplash.com/300x300/?watch,style">
-    <div class="name">WATCH 04</div>
-  </div>
+<div class="card">
+<img src="https://picsum.photos/400/400?12">
+<div class="name">SIGNATURE WATCH</div>
+<a class="btn" href="product.html">VIEW DETAILS</a>
+</div>
 
 </div>
 
-<script>
-function openP(name,img){
-  window.location.href = "product.html?item=" + name + "&img=" + img;
-}
-</script>
-
 </body>
-  </html>
+</html>
