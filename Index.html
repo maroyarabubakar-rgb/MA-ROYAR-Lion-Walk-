@@ -1,98 +1,193 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Shirt Shop</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+  <title>MA ROYAR LION WALK</title>
 
-        header {
-            background: black;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 24px;
-        }
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#fff;
+      color:#111;
+    }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 20px;
-        }
+    /* BRAND */
+    .brand{
+      text-align:center;
+      padding:25px 10px;
+      border-bottom:1px solid #eee;
+    }
 
-        .product {
-            background: white;
-            width: 200px;
-            margin: 15px;
-            padding: 10px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+    .brand h1{
+      margin:0;
+      letter-spacing:4px;
+      font-size:22px;
+    }
 
-        .product img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+    .brand p{
+      font-size:12px;
+      color:#666;
+      letter-spacing:2px;
+    }
 
-        .price {
-            color: green;
-            font-weight: bold;
-        }
+    /* TITLE */
+    .title{
+      margin:30px 20px 10px;
+      font-size:14px;
+      font-weight:bold;
+      letter-spacing:3px;
+      border-left:4px solid black;
+      padding-left:10px;
+    }
 
-        button {
-            background: black;
-            color: white;
-            border: none;
-            padding: 8px;
-            width: 100%;
-            margin-top: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+    /* GRID 3 COLUMNS */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+      padding:10px 20px;
+    }
 
-        button:hover {
-            background: gray;
-        }
-    </style>
+    .item{
+      border:1px solid #eee;
+      border-radius:10px;
+      overflow:hidden;
+      text-align:center;
+      background:#fff;
+    }
+
+    .item img{
+      width:100%;
+      height:140px;
+      object-fit:cover;
+    }
+
+    .name{
+      font-size:12px;
+      font-weight:bold;
+      letter-spacing:2px;
+      margin-top:8px;
+      text-transform:uppercase;
+    }
+
+    button{
+      width:90%;
+      margin:10px 0;
+      padding:8px;
+      border:none;
+      background:black;
+      color:white;
+      border-radius:5px;
+      cursor:pointer;
+      font-size:11px;
+      letter-spacing:2px;
+    }
+
+    button:hover{
+      background:#333;
+    }
+
+    /* MOBILE FIX */
+    @media(max-width:768px){
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:480px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
 </head>
+
 <body>
 
-<header>
-    🛍 My Shirt Shop
-</header>
+<!-- BRAND -->
+<div class="brand">
+  <h1>MA ROYAR LION WALK</h1>
+  <p>ROYAL • CONFIDENCE • OUTFIT</p>
+</div>
 
-<div class="container">
+<!-- SHIRTS -->
+<div class="title">SHIRTS COLLECTION</div>
+<div class="grid">
 
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>Black Shirt</h3>
-        <p class="price">1200 PKR</p>
-        <button>Buy Now</button>
-    </div>
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?shirt,fashion">
+    <div class="name">SHIRT 01</div>
+    <button onclick="buy('SHIRT 01')">ORDER</button>
+  </div>
 
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>White Shirt</h3>
-        <p class="price">1000 PKR</p>
-        <button>Buy Now</button>
-    </div>
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?shirt,style">
+    <div class="name">SHIRT 02</div>
+    <button onclick="buy('SHIRT 02')">ORDER</button>
+  </div>
 
-    <div class="product">
-        <img src="https://via.placeholder.com/200">
-        <h3>Blue Shirt</h3>
-        <p class="price">1500 PKR</p>
-        <button>Buy Now</button>
-    </div>
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?shirt,men">
+    <div class="name">SHIRT 03</div>
+    <button onclick="buy('SHIRT 03')">ORDER</button>
+  </div>
 
 </div>
 
+<!-- PANTS -->
+<div class="title">DRESSING PANTS</div>
+<div class="grid">
+
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?pants,formal">
+    <div class="name">PANT 01</div>
+    <button onclick="buy('PANT 01')">ORDER</button>
+  </div>
+
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?trousers,fashion">
+    <div class="name">PANT 02</div>
+    <button onclick="buy('PANT 02')">ORDER</button>
+  </div>
+
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?jeans,men">
+    <div class="name">PANT 03</div>
+    <button onclick="buy('PANT 03')">ORDER</button>
+  </div>
+
+</div>
+
+<!-- WATCHES -->
+<div class="title">WATCH COLLECTION</div>
+<div class="grid">
+
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?watch,luxury">
+    <div class="name">WATCH 01</div>
+    <button onclick="buy('WATCH 01')">ORDER</button>
+  </div>
+
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?watch,classic">
+    <div class="name">WATCH 02</div>
+    <button onclick="buy('WATCH 02')">ORDER</button>
+  </div>
+
+  <div class="item">
+    <img src="https://source.unsplash.com/300x300/?watch,style">
+    <div class="name">WATCH 03</div>
+    <button onclick="buy('WATCH 03')">ORDER</button>
+  </div>
+
+</div>
+
+<script>
+function buy(p){
+  window.open("https://wa.me/923180991880?text=ORDER: " + p);
+}
+</script>
+
 </body>
-</html>
+        </html>
