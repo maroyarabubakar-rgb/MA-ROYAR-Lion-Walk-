@@ -7,7 +7,7 @@
 <style>
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial;
   background:#fff;
   color:#111;
 }
@@ -24,8 +24,8 @@ body{
 }
 
 .header p{
-  color:#666;
   font-size:12px;
+  color:#666;
   letter-spacing:2px;
 }
 
@@ -40,22 +40,25 @@ img{
   border-radius:12px;
 }
 
-.product-title{
-  font-size:24px;
+.title{
+  font-size:22px;
   font-weight:bold;
   margin-top:15px;
   letter-spacing:2px;
 }
 
-.info{
-  margin-top:10px;
-  line-height:1.8;
+.price{
+  font-size:20px;
+  font-weight:bold;
+  margin:10px 0;
+  color:green;
 }
 
-.price{
-  font-size:22px;
-  font-weight:bold;
-  margin:15px 0;
+.info{
+  font-size:13px;
+  color:#444;
+  line-height:1.8;
+  margin-top:10px;
 }
 
 select,input{
@@ -68,4 +71,103 @@ select,input{
 
 button{
   width:100%;
-  padding:14px
+  padding:14px;
+  margin-top:15px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+.buy{
+  background:black;
+  color:white;
+}
+
+.back{
+  background:#f2f2f2;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>🦁 MA ROYAR</h1>
+  <p>LION WALK • ROYAL CONFIDENCE OUTFIT</p>
+</div>
+
+<div class="container">
+
+  <img id="img">
+
+  <div class="title" id="name"></div>
+
+  <div class="price">PKR 2,499</div>
+
+  <div class="info">
+    <b>Brand:</b> MA ROYAR LION WALK<br>
+    <b>Quality:</b> Premium Export Quality<br>
+    <b>Delivery:</b> Available All Pakistan<br>
+    <b>Status:</b> In Stock
+  </div>
+
+  <div class="info">
+    Premium fashion outfit designed for modern royal lifestyle.
+    Comfortable fabric with high quality stitching and luxury finish.
+  </div>
+
+  <select id="color">
+    <option>SELECT COLOR</option>
+    <option>BLACK</option>
+    <option>WHITE</option>
+    <option>BLUE</option>
+  </select>
+
+  <select id="size">
+    <option>SELECT SIZE</option>
+    <option>S</option>
+    <option>M</option>
+    <option>L</option>
+    <option>XL</option>
+  </select>
+
+  <input type="number" id="qty" value="1" min="1">
+
+  <button class="buy" onclick="order()">
+    ORDER ON WHATSAPP
+  </button>
+
+  <button class="back" onclick="history.back()">
+    BACK TO SHOP
+  </button>
+
+</div>
+
+<script>
+let p = new URLSearchParams(window.location.search);
+
+let name = p.get("name") || "PRODUCT";
+let img = p.get("img") || "https://via.placeholder.com/600";
+
+document.getElementById("name").innerText = name;
+document.getElementById("img").src = img;
+
+function order(){
+
+let msg =
+"🦁 MA ROYAR ORDER\n\n" +
+"Product: " + name + "\n" +
+"Color: " + document.getElementById("color").value + "\n" +
+"Size: " + document.getElementById("size").value + "\n" +
+"Quantity: " + document.getElementById("qty").value + "\n\n" +
+"Brand: MA ROYAR LION WALK";
+
+window.open("https://wa.me/923180991880?text=" + encodeURIComponent(msg));
+
+}
+</script>
+
+</body>
+  </html>
