@@ -1,514 +1,626 @@
-<!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8">
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MA ROYAR | 3D ROTATING MOON LAMP</title><style>
 
 *{
   box-sizing:border-box;
-  margin:0;
-  padding:0;
 }
 
 body{
+  margin:0;
   font-family:Arial,Helvetica,sans-serif;
-  background:#080808;
+  background:#050505;
   color:#fff;
 }
 
 /* HEADER */
 
 .header{
-  padding:22px 6%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  border-bottom:1px solid #252525;
+  text-align:center;
+  padding:28px 15px;
+  border-bottom:1px solid #292929;
 }
 
 .logo{
-  color:#d4af37;
   font-size:25px;
   font-weight:900;
-  letter-spacing:3px;
+  letter-spacing:4px;
 }
 
 .brand{
-  color:#999;
-  font-size:11px;
+  margin-top:8px;
+  color:#d4af37;
+  font-size:10px;
   letter-spacing:3px;
 }
+
 
 /* MAIN */
 
 .container{
   width:92%;
-  max-width:1150px;
-  margin:50px auto;
+  max-width:1000px;
+  margin:35px auto;
 }
 
 .product-box{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:55px;
+  gap:35px;
 }
 
-/* IMAGE */
+
+/* MAIN IMAGE */
 
 .main-image{
   width:100%;
-  height:520px;
+  height:350px;
   object-fit:cover;
-  border-radius:18px;
+  border-radius:15px;
   border:1px solid #292929;
+  display:block;
 }
+
+
+/* GALLERY */
 
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:15px;
+  gap:10px;
+  margin-top:12px;
 }
 
 .gallery img{
   width:100%;
-  height:100px;
+  height:75px;
   object-fit:cover;
-  border-radius:10px;
-  cursor:pointer;
+  border-radius:8px;
   border:1px solid #292929;
+  cursor:pointer;
+  transition:.2s;
 }
 
+.gallery img:hover{
+  border-color:#d4af37;
+}
+
+
+/* VIDEO */
+
 .video-box{
-  margin-top:15px;
+  margin-top:12px;
 }
 
 .video-box video{
   width:100%;
-  border-radius:15px;
+  max-height:220px;
+  border-radius:10px;
+  display:block;
 }
 
-/* PRODUCT */
+
+/* PRODUCT INFO */
 
 .category{
   color:#d4af37;
-  font-size:12px;
-  letter-spacing:3px;
+  font-size:10px;
   font-weight:bold;
-  margin-bottom:15px;
+  letter-spacing:3px;
+  margin-bottom:12px;
 }
 
 .product-title{
-  font-size:42px;
+  margin:0 0 15px;
+  font-size:32px;
   line-height:1.1;
-  margin-bottom:18px;
 }
 
 .subtitle{
-  color:#aaa;
-  font-size:15px;
+  color:#999;
+  font-size:13px;
   line-height:1.7;
-  margin-bottom:25px;
 }
 
 .price{
+  margin:18px 0;
   color:#d4af37;
-  font-size:30px;
-  font-weight:bold;
-  margin-bottom:25px;
+  font-size:27px;
+  font-weight:900;
 }
 
 .line{
   height:1px;
   background:#292929;
-  margin:25px 0;
+  margin:18px 0;
 }
 
 .features{
   list-style:none;
-  margin-bottom:30px;
+  padding:0;
+  margin:0 0 20px;
 }
 
 .features li{
-  color:#ddd;
-  font-size:14px;
-  margin-bottom:13px;
+  color:#ccc;
+  font-size:12px;
+  margin-bottom:9px;
 }
 
 .features li::before{
   content:"✓";
   color:#d4af37;
+  margin-right:8px;
   font-weight:bold;
-  margin-right:10px;
 }
 
-/* ORDER BUTTON */
+
+/* ORDER NOW */
 
 .order-btn{
   width:100%;
-  padding:17px;
-  border:none;
+  padding:15px;
+  border:0;
   border-radius:8px;
   background:#d4af37;
   color:#000;
   font-weight:900;
-  font-size:15px;
+  font-size:14px;
+  letter-spacing:2px;
   cursor:pointer;
-  letter-spacing:1px;
 }
 
-.order-btn:hover{
-  background:#fff;
-}
 
 /* ORDER FORM */
 
 .order-form{
   display:none;
-  margin-top:35px;
-  padding:25px;
-  background:#111;
+  margin-top:18px;
+  padding:20px;
+  background:#101010;
   border:1px solid #292929;
-  border-radius:15px;
+  border-radius:14px;
 }
 
 .order-form h2{
   color:#d4af37;
-  font-size:20px;
+  font-size:18px;
   letter-spacing:2px;
-  margin-bottom:20px;
+  margin:0 0 15px;
 }
 
-.order-form label{
+label{
   display:block;
-  color:#ddd;
-  font-size:12px;
-  margin-bottom:7px;
-  margin-top:15px;
+  margin:12px 0 6px;
+  color:#ccc;
+  font-size:10px;
   letter-spacing:1px;
 }
 
-.order-form input,
-.order-form select,
-.order-form textarea{
+input,
+select,
+textarea{
   width:100%;
-  padding:13px;
+  padding:12px;
   border:1px solid #333;
   border-radius:7px;
-  background:#080808;
+  background:#050505;
   color:#fff;
   outline:none;
+  font-size:13px;
 }
 
-.order-form textarea{
-  min-height:100px;
+textarea{
+  height:80px;
   resize:vertical;
 }
 
+
+/* EASYPAISA */
+
 .payment-box{
+  margin-top:18px;
+  padding:15px;
+  border-radius:9px;
+  border:1px solid #d4af37;
+  background:#0b0b0b;
+  color:#aaa;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.payment-title{
+  color:#d4af37;
+  font-weight:900;
+  font-size:14px;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+.payment-number{
+  color:#fff;
+  font-size:17px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+
+/* WHATSAPP BUTTON */
+
+.payment-btn{
+  width:100%;
   margin-top:15px;
   padding:15px;
-  border:1px solid #333;
-  border-radius:8px;
-  background:#0a0a0a;
-}
-
-.payment-box strong{
-  color:#d4af37;
-}
-
-.submit-btn{
-  width:100%;
-  margin-top:20px;
-  padding:15px;
-  border:none;
+  border:0;
   border-radius:8px;
   background:#25D366;
   color:#000;
+  font-size:13px;
   font-weight:900;
+  letter-spacing:1px;
   cursor:pointer;
-  font-size:15px;
 }
+
 
 /* DESCRIPTION */
 
-.description-box{
-  margin-top:70px;
-  padding:35px;
+.description{
+  margin-top:45px;
+  padding:24px;
   border:1px solid #292929;
-  border-radius:18px;
-  background:#0f0f0f;
+  border-radius:15px;
+  background:#101010;
 }
 
-.description-box h2{
+.description h2{
   color:#d4af37;
-  font-size:20px;
+  font-size:18px;
   letter-spacing:2px;
-  margin-bottom:18px;
 }
 
-.description-box p{
-  color:#aaa;
+.description p{
+  color:#999;
+  font-size:13px;
   line-height:1.8;
-  font-size:15px;
 }
 
-/* FOOTER */
-
-footer{
-  text-align:center;
-  padding:35px 15px;
-  margin-top:70px;
-  border-top:1px solid #242424;
-  color:#777;
-  font-size:12px;
-  letter-spacing:2px;
-}
 
 /* MOBILE */
 
-@media(max-width:800px){
-
-  .brand{
-    display:none;
-  }
-
-  .container{
-    margin:30px auto;
-  }
+@media(max-width:750px){
 
   .product-box{
     grid-template-columns:1fr;
-    gap:35px;
+    gap:25px;
   }
 
   .main-image{
-    height:390px;
+    height:300px;
   }
 
   .product-title{
-    font-size:32px;
+    font-size:28px;
+  }
+
+  .gallery img{
+    height:70px;
   }
 
 }
 
-</style></head><body><header class="header">  <div class="logo">
+</style></head><body><!-- HEADER --><header class="header">  <div class="logo">
     MA ROYAR
   </div>  <div class="brand">
-    PREMIUM • TRENDING • LIFESTYLE
-  </div></header><main class="container"><div class="product-box"><!-- PRODUCT IMAGES --><div><img
+    TRENDING | ROYAL | DECORATE
+  </div></header><main class="container"><div class="product-box"><!-- =========================
+     PRODUCT IMAGES
+========================= --><div><img
 id="mainImage"
 class="main-image"
 src="moon-lamp-1.jpg"
-alt="3D ROTATING MOON LAMP"
+alt="3D Rotating Moon Lamp"
 
 «»
 
-<div class="gallery"><img
-src="moon-lamp-1.jpg"
-onclick="changeImage(this.src)"
-
-«»
+  <div class="gallery"><img
+  src="moon-lamp-1.jpg"
+  alt="Moon Lamp 1"
+  onclick="changeImage('moon-lamp-1.jpg')"
+>
 
 <img
-src="moon-lamp-2.jpg"
-onclick="changeImage(this.src)"
-
-«»
+  src="moon-lamp-2.jpg"
+  alt="Moon Lamp 2"
+  onclick="changeImage('moon-lamp-2.jpg')"
+>
 
 <img
-src="moon-lamp-3.jpg"
-onclick="changeImage(this.src)"
+  src="moon-lamp-3.jpg"
+  alt="Moon Lamp 3"
+  onclick="changeImage('moon-lamp-3.jpg')"
+>
 
-«»
+  </div>  <div class="video-box"><video controls>
 
-</div><div class="video-box"><video controls><source
-src="moon-lamp-video.mp4"
-type="video/mp4"
+  <source
+    src="moon-lamp-video.mp4"
+    type="video/mp4"
+  >
 
-«»
+  Your browser does not support video.
 
-YOUR BROWSER DOES NOT SUPPORT VIDEO.
+</video>
 
-</video></div></div><!-- PRODUCT INFORMATION --><div><div class="category">
-MA ROYAR • TRENDING
-</div><h1 class="product-title">
-3D ROTATING<br>
-MOON LAMP
-</h1><p class="subtitle">
-BRING A UNIQUE MOONLIGHT EXPERIENCE INTO YOUR SPACE.
-A BEAUTIFUL DECORATIVE LAMP FOR BEDROOMS,
-LIVING ROOMS, STUDY AREAS AND GIFTING.
-</p><div class="price">
-RS. 14,999
-</div><div class="line"></div><ul class="features"><li>3D MOON SURFACE DESIGN</li><li>ROTATING DISPLAY EFFECT</li><li>PERFECT FOR ROOM DECORATION</li><li>BEAUTIFUL GIFT CHOICE</li><li>MODERN PREMIUM LOOK</li></ul><button
+  </div></div><!-- =========================
+     PRODUCT DETAILS
+========================= --><div>  <div class="category">
+    MA ROYAR • TRENDING PRODUCT
+  </div>  <h1 class="product-title">
+    3D ROTATING<br>
+    MOON LAMP
+  </h1>  <p class="subtitle">
+    BRING A UNIQUE MOONLIGHT EXPERIENCE
+    INTO YOUR ROOM. BEAUTIFUL, MODERN
+    AND PERFECT FOR DECORATION OR GIFTING.
+  </p>  <div class="price">
+    RS. 14,999
+  </div>  <div class="line"></div>  <ul class="features"><li>3D MOON SURFACE DESIGN</li>
+
+<li>ROTATING DISPLAY EFFECT</li>
+
+<li>PERFECT FOR ROOM DECORATION</li>
+
+<li>PREMIUM MODERN LOOK</li>
+
+<li>GREAT GIFT CHOICE</li>
+
+  </ul>  <!-- ORDER NOW --><button
 class="order-btn"
 onclick="showOrderForm()"
 
 «»
 
 ORDER NOW
+
+  </button>  <!-- =========================
+       CUSTOMER FORM
+  ========================= -->  <div
+    id="orderForm"
+    class="order-form"
+  ><h2>
+  CUSTOMER ORDER
+</h2>
+
+
+<label>
+  CUSTOMER NAME
+</label>
+
+<input
+  id="customerName"
+  type="text"
+  placeholder="ENTER YOUR FULL NAME"
+>
+
+
+<label>
+  PHONE NUMBER
+</label>
+
+<input
+  id="phone"
+  type="tel"
+  placeholder="03XXXXXXXXX"
+>
+
+
+<label>
+  ALTERNATIVE PHONE NUMBER
+</label>
+
+<input
+  id="alternativePhone"
+  type="tel"
+  placeholder="03XXXXXXXXX"
+>
+
+
+<label>
+  CITY
+</label>
+
+<input
+  id="city"
+  type="text"
+  placeholder="ENTER YOUR CITY"
+>
+
+
+<label>
+  COMPLETE ADDRESS
+</label>
+
+<textarea
+  id="address"
+  placeholder="HOUSE NUMBER, STREET, AREA, SECTOR..."
+></textarea>
+
+
+<label>
+  QUANTITY
+</label>
+
+<select id="quantity">
+
+  <option value="1">1</option>
+
+  <option value="2">2</option>
+
+  <option value="3">3</option>
+
+  <option value="4">4</option>
+
+  <option value="5">5</option>
+
+</select>
+
+
+<!-- =========================
+     PAYMENT
+========================= -->
+
+<div class="payment-box">
+
+  <div class="payment-title">
+    💳 ONLINE PAYMENT ONLY — EASYPAISA
+  </div>
+
+  <div>
+    PAYMENT METHOD:
+    <strong>EASYPAISA</strong>
+  </div>
+
+  <div>
+    EASYPAISA NUMBER:
+  </div>
+
+  <div class="payment-number">
+    0318 0991880
+  </div>
+
+  <div>
+    TOTAL PRICE:
+    <strong>RS. 14,999</strong>
+  </div>
+
+  <br>
+
+  PLEASE SEND THE PAYMENT TO THE ABOVE
+  EASYPAISA NUMBER AND KEEP YOUR
+  PAYMENT RECEIPT / TRANSACTION ID.
+
+  <br><br>
+
+  AFTER PAYMENT, SUBMIT YOUR ORDER
+  DETAILS THROUGH WHATSAPP.
+
+</div>
+
+
+<!-- GREEN BUTTON -->
+
+<button
+  class="payment-btn"
+  onclick="placeOrder()"
+>
+  SUBMIT ORDER & PAYMENT DETAILS
 </button>
 
-<!-- ORDER FORM --><div
-id="orderForm"
-class="order-form"
-><h2>
-ORDER DETAILS
-</h2><label>
-CUSTOMER NAME
-</label><input
-id="customerName"
-type="text"
-placeholder="ENTER YOUR FULL NAME"
-required
+  </div></div></div><!-- =========================
+     DESCRIPTION
+========================= --><section class="description">  <h2>
+    PRODUCT DETAILS
+  </h2>  <p>
+    THE 3D ROTATING MOON LAMP IS A BEAUTIFUL
+    DECORATION PIECE FOR BEDROOMS, LIVING ROOMS,
+    STUDY AREAS AND GIFTING. ITS MOON-INSPIRED
+    DESIGN GIVES YOUR SPACE A UNIQUE AND PREMIUM
+    LOOK.
+  </p></section></main><script>
 
-«»
-
-<label>
-PHONE NUMBER
-</label><input
-id="phone"
-type="tel"
-placeholder="03XXXXXXXXX"
-required
-
-«»
-
-<label>
-ALTERNATIVE PHONE NUMBER
-</label><input
-id="alternativePhone"
-type="tel"
-placeholder="03XXXXXXXXX"
-
-«»
-
-<label>
-CITY
-</label><input
-id="city"
-type="text"
-placeholder="ENTER YOUR CITY"
-required
-
-«»
-
-<label>
-COMPLETE ADDRESS
-</label><textarea
-id="address"
-placeholder="HOUSE NUMBER, STREET, AREA, ETC."
-required
-></textarea><label>
-QUANTITY
-</label><select id="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><div class="payment-box"><strong>
-PAYMENT METHOD
-</strong><br><br>
-
-ONLINE PAYMENT ONLY
-
-<br><br>
-
-PAYMENT DETAILS WILL BE PROVIDED AFTER ORDER SUBMISSION.
-
-</div><button
-class="submit-btn"
-onclick="placeOrder()"
-
-«»
-
-SUBMIT ORDER ON WHATSAPP
-</button>
-
-</div></div></div><section class="description-box"><h2>
-PRODUCT DETAILS
-</h2><p>THE 3D ROTATING MOON LAMP IS A BEAUTIFUL AND MODERN
-DECORATION PIECE FOR YOUR HOME. ITS MOON-INSPIRED
-DESIGN CREATES A PREMIUM LOOK AND MAKES IT A GREAT
-CHOICE FOR BEDROOMS, LIVING SPACES, STUDY AREAS AND
-GIFTING.
-
-</p></section></main><footer>© 2026 MA ROYAR • ALL RIGHTS RESERVED
-
-</footer><script>
+/* CHANGE IMAGE */
 
 function changeImage(image){
 
-document.getElementById("mainImage").src=image;
+  document.getElementById("mainImage").src = image;
 
 }
 
+
+/* SHOW ORDER FORM */
 
 function showOrderForm(){
 
-document.getElementById("orderForm").style.display="block";
+  document.getElementById("orderForm").style.display = "block";
 
-document.getElementById("orderForm").scrollIntoView({
-behavior:"smooth"
-});
+  document.getElementById("orderForm").scrollIntoView({
+    behavior:"smooth"
+  });
 
 }
 
+
+/* WHATSAPP ORDER */
 
 function placeOrder(){
 
-let name =
-document.getElementById("customerName").value.trim();
+  let name =
+    document.getElementById("customerName").value.trim();
 
-let phone =
-document.getElementById("phone").value.trim();
+  let phone =
+    document.getElementById("phone").value.trim();
 
-let alternative =
-document.getElementById("alternativePhone").value.trim();
+  let alternative =
+    document.getElementById("alternativePhone").value.trim();
 
-let city =
-document.getElementById("city").value.trim();
+  let city =
+    document.getElementById("city").value.trim();
 
-let address =
-document.getElementById("address").value.trim();
+  let address =
+    document.getElementById("address").value.trim();
 
-let quantity =
-document.getElementById("quantity").value;
+  let quantity =
+    document.getElementById("quantity").value;
 
 
-if(name==="" || phone==="" || city==="" || address===""){
+  if(
+    name === "" ||
+    phone === "" ||
+    city === "" ||
+    address === ""
+  ){
 
-alert("PLEASE FILL ALL REQUIRED DETAILS.");
+    alert("PLEASE FILL ALL REQUIRED DETAILS.");
 
-return;
+    return;
+
+  }
+
+
+  let message =
+    "NEW ORDER - MA ROYAR\n\n" +
+
+    "PRODUCT: 3D ROTATING MOON LAMP\n" +
+
+    "PRICE: RS. 14,999\n" +
+
+    "QUANTITY: " + quantity + "\n\n" +
+
+    "PAYMENT: EASYPAISA\n" +
+
+    "PAYMENT NUMBER: 0318 0991880\n\n" +
+
+    "CUSTOMER NAME: " + name + "\n" +
+
+    "PHONE: " + phone + "\n" +
+
+    "ALTERNATIVE PHONE: " + alternative + "\n" +
+
+    "CITY: " + city + "\n" +
+
+    "COMPLETE ADDRESS: " + address;
+
+
+  let whatsapp =
+    "https://wa.me/923180991880?text=" +
+    encodeURIComponent(message);
+
+
+  window.open(
+    whatsapp,
+    "_blank"
+  );
 
 }
 
-
-let message =
-
-"NEW ORDER - MA ROYAR%0A%0A" +
-
-"PRODUCT: 3D ROTATING MOON LAMP%0A" +
-
-"PRICE: RS. 14,999%0A" +
-
-"QUANTITY: " + quantity + "%0A%0A" +
-
-"PAYMENT METHOD: ONLINE PAYMENT%0A%0A" +
-
-"CUSTOMER NAME: " + encodeURIComponent(name) + "%0A" +
-
-"PHONE NUMBER: " + encodeURIComponent(phone) + "%0A" +
-
-"ALTERNATIVE NUMBER: " + encodeURIComponent(alternative) + "%0A" +
-
-"CITY: " + encodeURIComponent(city) + "%0A" +
-
-"COMPLETE ADDRESS: " + encodeURIComponent(address);
-
-
-let whatsapp =
-"https://wa.me/923180991880?text=" + message;
-
-
-window.open(whatsapp,"_blank");
-
-}
-
-</script></body>
-                                </html>
+</script></body></html>
