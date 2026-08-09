@@ -50,53 +50,49 @@ body{
 }
 
 
-/* MAIN IMAGE */
+/* MEDIA SLIDER */
 
-.main-image{
+.media-slider{
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  display:flex;
+  gap:12px;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+  border-radius:15px;
+}
+
+.media-slider::-webkit-scrollbar{
+  display:none;
+}
+
+.media-item{
+  min-width:100%;
+  scroll-snap-align:start;
+}
+
+.media-item img,
+.media-item video{
   width:100%;
   height:350px;
   object-fit:cover;
+  display:block;
   border-radius:15px;
   border:1px solid #292929;
-  display:block;
+  background:#000;
 }
 
 
-/* GALLERY */
+/* SWIPE TEXT */
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:12px;
-}
-
-.gallery img{
-  width:100%;
-  height:75px;
-  object-fit:cover;
-  border-radius:8px;
-  border:1px solid #292929;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.gallery img:hover{
-  border-color:#d4af37;
-}
-
-
-/* VIDEO */
-
-.video-box{
-  margin-top:12px;
-}
-
-.video-box video{
-  width:100%;
-  max-height:220px;
-  border-radius:10px;
-  display:block;
+.swipe-hint{
+  text-align:center;
+  color:#777;
+  font-size:10px;
+  letter-spacing:2px;
+  margin-top:10px;
 }
 
 
@@ -134,6 +130,46 @@ body{
   background:#292929;
   margin:18px 0;
 }
+
+
+/* MORE DETAILS */
+
+.more-details{
+  background:#101010;
+  border:1px solid #292929;
+  border-radius:12px;
+  margin:20px 0;
+  overflow:hidden;
+}
+
+.more-details summary{
+  padding:15px;
+  background:#d4af37;
+  color:#000;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2px;
+  cursor:pointer;
+  list-style:none;
+}
+
+.more-details summary::-webkit-details-marker{
+  display:none;
+}
+
+.more-content{
+  padding:18px;
+  color:#999;
+  font-size:13px;
+  line-height:1.8;
+}
+
+.more-content strong{
+  color:#fff;
+}
+
+
+/* FEATURES */
 
 .features{
   list-style:none;
@@ -220,7 +256,7 @@ textarea{
 
 .payment-box{
   margin-top:18px;
-  padding:15px;
+  padding:16px;
   border-radius:9px;
   border:1px solid #d4af37;
   background:#0b0b0b;
@@ -234,7 +270,13 @@ textarea{
   font-weight:900;
   font-size:14px;
   letter-spacing:1px;
-  margin-bottom:8px;
+  margin-bottom:10px;
+}
+
+.payment-name{
+  color:#fff;
+  font-size:15px;
+  font-weight:900;
 }
 
 .payment-number{
@@ -245,7 +287,7 @@ textarea{
 }
 
 
-/* WHATSAPP BUTTON */
+/* GREEN BUTTON */
 
 .payment-btn{
   width:100%;
@@ -294,16 +336,13 @@ textarea{
     gap:25px;
   }
 
-  .main-image{
+  .media-item img,
+  .media-item video{
     height:300px;
   }
 
   .product-title{
     font-size:28px;
-  }
-
-  .gallery img{
-    height:70px;
   }
 
 }
@@ -313,46 +352,64 @@ textarea{
   </div>  <div class="brand">
     TRENDING | ROYAL | DECORATE
   </div></header><main class="container"><div class="product-box"><!-- =========================
-     PRODUCT IMAGES
-========================= --><div><img
-id="mainImage"
-class="main-image"
-src="moon-lamp-1.jpg"
-alt="3D Rotating Moon Lamp"
+     VIDEO + IMAGES SLIDER
+========================= --><div>  <div class="media-slider"><!-- VIDEO FIRST -->
 
-«»
+<div class="media-item">
 
-  <div class="gallery"><img
-  src="moon-lamp-1.jpg"
-  alt="Moon Lamp 1"
-  onclick="changeImage('moon-lamp-1.jpg')"
->
+  <video controls playsinline>
 
-<img
-  src="moon-lamp-2.jpg"
-  alt="Moon Lamp 2"
-  onclick="changeImage('moon-lamp-2.jpg')"
->
+    <source
+      src="moon-lamp-video.mp4"
+      type="video/mp4"
+    >
 
-<img
-  src="moon-lamp-3.jpg"
-  alt="Moon Lamp 3"
-  onclick="changeImage('moon-lamp-3.jpg')"
->
+    Your browser does not support video.
 
-  </div>  <div class="video-box"><video controls>
+  </video>
 
-  <source
-    src="moon-lamp-video.mp4"
-    type="video/mp4"
+</div>
+
+
+<!-- IMAGE 1 -->
+
+<div class="media-item">
+
+  <img
+    src="moon-lamp-1.jpg"
+    alt="3D Rotating Moon Lamp Image 1"
   >
 
-  Your browser does not support video.
+</div>
 
-</video>
 
+<!-- IMAGE 2 -->
+
+<div class="media-item">
+
+  <img
+    src="moon-lamp-2.jpg"
+    alt="3D Rotating Moon Lamp Image 2"
+  >
+
+</div>
+
+
+<!-- IMAGE 3 -->
+
+<div class="media-item">
+
+  <img
+    src="moon-lamp-3.jpg"
+    alt="3D Rotating Moon Lamp Image 3"
+  >
+
+</div>
+
+  </div>  <div class="swipe-hint">
+    SWIPE RIGHT TO SEE MORE
   </div></div><!-- =========================
-     PRODUCT DETAILS
+     PRODUCT INFORMATION
 ========================= --><div>  <div class="category">
     MA ROYAR • TRENDING PRODUCT
   </div>  <h1 class="product-title">
@@ -364,7 +421,41 @@ alt="3D Rotating Moon Lamp"
     AND PERFECT FOR DECORATION OR GIFTING.
   </p>  <div class="price">
     RS. 14,999
-  </div>  <div class="line"></div>  <ul class="features"><li>3D MOON SURFACE DESIGN</li>
+  </div>  <div class="line"></div>  <!-- MORE DETAILS -->  <details class="more-details"><summary>
+  MORE DETAILS
+</summary>
+
+<div class="more-content">
+
+  <p>
+    <strong>PRODUCT:</strong>
+    3D ROTATING MOON LAMP
+  </p>
+
+  <p>
+    <strong>DESIGN:</strong>
+    BEAUTIFUL 3D MOON-INSPIRED DESIGN
+  </p>
+
+  <p>
+    <strong>USE:</strong>
+    BEDROOM, LIVING ROOM, STUDY AREA,
+    DECORATION AND GIFTING
+  </p>
+
+  <p>
+    <strong>STYLE:</strong>
+    MODERN, UNIQUE AND PREMIUM LOOK
+  </p>
+
+  <p>
+    <strong>PRICE:</strong>
+    RS. 14,999
+  </p>
+
+</div>
+
+  </details>  <!-- FEATURES -->  <ul class="features"><li>3D MOON SURFACE DESIGN</li>
 
 <li>ROTATING DISPLAY EFFECT</li>
 
@@ -383,7 +474,7 @@ onclick="showOrderForm()"
 ORDER NOW
 
   </button>  <!-- =========================
-       CUSTOMER FORM
+       CUSTOMER ORDER FORM
   ========================= -->  <div
     id="orderForm"
     class="order-form"
@@ -466,19 +557,24 @@ ORDER NOW
 
 
 <!-- =========================
-     PAYMENT
+     EASYPAISA PAYMENT
 ========================= -->
 
 <div class="payment-box">
 
   <div class="payment-title">
-    💳 ONLINE PAYMENT ONLY — EASYPAISA
+    💳 ONLINE PAYMENT — EASYPAISA
   </div>
 
   <div>
-    PAYMENT METHOD:
-    <strong>EASYPAISA</strong>
+    ACCOUNT NAME:
   </div>
+
+  <div class="payment-name">
+    MUHAMMAD ABUBAKAR
+  </div>
+
+  <br>
 
   <div>
     EASYPAISA NUMBER:
@@ -488,6 +584,8 @@ ORDER NOW
     0318 0991880
   </div>
 
+  <br>
+
   <div>
     TOTAL PRICE:
     <strong>RS. 14,999</strong>
@@ -496,7 +594,7 @@ ORDER NOW
   <br>
 
   PLEASE SEND THE PAYMENT TO THE ABOVE
-  EASYPAISA NUMBER AND KEEP YOUR
+  EASYPAISA ACCOUNT AND KEEP YOUR
   PAYMENT RECEIPT / TRANSACTION ID.
 
   <br><br>
@@ -527,15 +625,6 @@ ORDER NOW
     DESIGN GIVES YOUR SPACE A UNIQUE AND PREMIUM
     LOOK.
   </p></section></main><script>
-
-/* CHANGE IMAGE */
-
-function changeImage(image){
-
-  document.getElementById("mainImage").src = image;
-
-}
-
 
 /* SHOW ORDER FORM */
 
@@ -597,6 +686,8 @@ function placeOrder(){
     "QUANTITY: " + quantity + "\n\n" +
 
     "PAYMENT: EASYPAISA\n" +
+
+    "ACCOUNT NAME: MUHAMMAD ABUBAKAR\n" +
 
     "PAYMENT NUMBER: 0318 0991880\n\n" +
 
