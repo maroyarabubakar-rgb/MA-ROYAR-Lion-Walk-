@@ -1,2 +1,2 @@
-# MA-ROYAR-Lion-Walk-
-MA ROYAR ✦ Lion Walk | Wear Confidence
+# MA-ROYAR-Zone-
+MA ROYAR ✦ Lion | Wear Confidence
