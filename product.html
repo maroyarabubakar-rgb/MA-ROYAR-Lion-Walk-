@@ -1,144 +1,385 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Rotating Moon Lamp - MA ROYAR</title>  <style>
-    body {
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>MA ROYAR | 3D ROTATING MOON LAMP</title>  <style>
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 30px 15px;
-      background: #f5f5f5;
-      font-family: Arial, sans-serif;
+      padding: 0;
     }
 
-    .product-card {
-      width: 300px;
-      padding: 15px;
-      text-align: center;
-      border-radius: 15px;
-      background: white;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-      margin: 20px auto;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #080808;
+      color: #ffffff;
     }
 
-    .product-card h2 {
-      margin-bottom: 12px;
-      font-size: 22px;
-    }
-
-    .product-main-image {
+    .header {
       width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 12px;
+      padding: 22px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #242424;
+      background: #080808;
     }
 
-    .product-name {
-      font-size: 17px;
-      margin: 12px 0;
-      font-weight: 600;
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      color: #d4af37;
     }
 
-    .view-more-btn {
-      border: none;
-      padding: 12px 25px;
-      border-radius: 25px;
-      background: #111;
-      color: white;
-      cursor: pointer;
-      font-size: 15px;
+    .brand {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #999;
     }
 
-    .product-details {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      max-width: 600px;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding: 25px;
-      background: white;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: 50px auto;
     }
 
-    .product-gallery {
+    .product-box {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .main-image {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: 18px;
+      background: #111;
+      border: 1px solid #292929;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
       margin-top: 15px;
     }
 
-    .product-gallery img {
+    .gallery img {
       width: 100%;
-      border-radius: 12px;
-    }
-
-    .product-gallery video {
-      width: 100%;
-      grid-column: 1 / -1;
-      border-radius: 12px;
-    }
-
-    .close-btn {
-      float: right;
-      border: none;
-      background: none;
-      font-size: 30px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
       cursor: pointer;
+      border: 1px solid #292929;
+      transition: 0.3s;
     }
 
-    .description {
-      font-size: 16px;
-      line-height: 1.6;
+    .gallery img:hover {
+      border-color: #d4af37;
+      transform: translateY(-2px);
     }
-  </style></head><body>  <div class="product-card"><h2>Rotating Moon Lamp</h2>
 
-<img
-  src="images/moon-lamp-1.jpg"
-  alt="Rotating Moon Lamp"
-  class="product-main-image"
->
+    .video-box {
+      margin-top: 15px;
+    }
 
-<p class="product-name">3D Rotating Moon Lamp</p>
+    .video-box video {
+      width: 100%;
+      border-radius: 15px;
+      border: 1px solid #292929;
+    }
 
-<button class="view-more-btn" onclick="openProduct()">
-  View More
-</button>
+    .category {
+      color: #d4af37;
+      font-size: 12px;
+      letter-spacing: 3px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
 
-  </div>  <div id="productDetails" class="product-details"><button class="close-btn" onclick="closeProduct()">×</button>
+    .product-title {
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
 
-<h2>Rotating Moon Lamp</h2>
+    .subtitle {
+      color: #aaa;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
 
-<p>3D Rotating Moon Lamp</p>
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      color: #d4af37;
+      margin-bottom: 28px;
+    }
 
-<div class="product-gallery">
+    .line {
+      width: 100%;
+      height: 1px;
+      background: #292929;
+      margin: 25px 0;
+    }
 
-  <img src="images/moon-lamp-2.jpg" alt="Moon Lamp">
+    .features {
+      list-style: none;
+      margin-bottom: 30px;
+    }
 
-  <img src="images/moon-lamp-3.jpg" alt="Moon Lamp">
+    .features li {
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
 
-  <video controls>
-    <source src="images/moon-lamp-video.mp4" type="video/mp4">
-    Your browser does not support video.
-  </video>
+    .features li::before {
+      content: "✓";
+      color: #d4af37;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .order-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 17px 20px;
+      border-radius: 8px;
+      background: #d4af37;
+      color: #000;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .order-btn:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-top: 22px;
+      color: #aaa;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .back-btn:hover {
+      color: #d4af37;
+    }
+
+    .description-box {
+      margin-top: 70px;
+      padding: 35px;
+      border: 1px solid #292929;
+      border-radius: 18px;
+      background: #0f0f0f;
+    }
+
+    .description-box h2 {
+      color: #d4af37;
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .description-box p {
+      color: #aaa;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 15px;
+      margin-top: 70px;
+      border-top: 1px solid #242424;
+      color: #777;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 800px) {
+
+      .header {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .brand {
+        display: none;
+      }
+
+      .container {
+        width: 92%;
+        margin: 30px auto;
+      }
+
+      .product-box {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .main-image {
+        height: 390px;
+      }
+
+      .product-title {
+        font-size: 32px;
+      }
+
+      .price {
+        font-size: 27px;
+      }
+
+      .description-box {
+        margin-top: 45px;
+        padding: 25px;
+      }
+    }
+  </style></head><body>  <header class="header"><div class="logo">
+  MA ROYAR
+</div>
+
+<div class="brand">
+  PREMIUM • TRENDING • LIFESTYLE
+</div>
+
+  </header>  <main class="container"><div class="product-box">
+
+  <div>
+
+    <img
+      id="mainImage"
+      class="main-image"
+      src="moon-lamp-1.jpg"
+      alt="3D ROTATING MOON LAMP"
+    >
+
+    <div class="gallery">
+
+      <img
+        src="moon-lamp-1.jpg"
+        alt="MOON LAMP"
+        onclick="changeImage(this.src)"
+      >
+
+      <img
+        src="moon-lamp-2.jpg"
+        alt="MOON LAMP"
+        onclick="changeImage(this.src)"
+      >
+
+      <img
+        src="moon-lamp-3.jpg"
+        alt="MOON LAMP"
+        onclick="changeImage(this.src)"
+      >
+
+    </div>
+
+    <div class="video-box">
+
+      <video controls>
+        <source src="moon-lamp-video.mp4" type="video/mp4">
+        YOUR BROWSER DOES NOT SUPPORT VIDEO.
+      </video>
+
+    </div>
+
+  </div>
+
+
+  <div>
+
+    <div class="category">
+      MA ROYAR • TRENDING
+    </div>
+
+    <h1 class="product-title">
+      3D ROTATING<br>
+      MOON LAMP
+    </h1>
+
+    <p class="subtitle">
+      BRING A UNIQUE MOONLIGHT EXPERIENCE INTO YOUR SPACE.
+      A BEAUTIFUL DECORATIVE LAMP DESIGNED FOR BEDROOMS,
+      LIVING ROOMS, STUDY AREAS AND GIFTING.
+    </p>
+
+    <div class="price">
+      RS. 14,999
+    </div>
+
+    <div class="line"></div>
+
+    <ul class="features">
+
+      <li>3D MOON SURFACE DESIGN</li>
+
+      <li>ROTATING DISPLAY EFFECT</li>
+
+      <li>PERFECT FOR ROOM DECORATION</li>
+
+      <li>BEAUTIFUL GIFT CHOICE</li>
+
+      <li>MODERN AND PREMIUM LOOK</li>
+
+    </ul>
+
+    <a
+      class="order-btn"
+      href="https://wa.me/923180991880?text=HELLO%20MA%20ROYAR,%20I%20WANT%20TO%20ORDER%20THE%203D%20ROTATING%20MOON%20LAMP."
+      target="_blank"
+    >
+      ORDER ON WHATSAPP
+    </a>
+
+    <a class="back-btn" href="index.html">
+      ← BACK TO SHOP
+    </a>
+
+  </div>
 
 </div>
 
-<p class="description">
-  Beautiful 3D Rotating Moon Lamp for your room, bedroom or decoration.
-</p>
 
-  </div>  <script>
-    function openProduct() {
-      document.getElementById("productDetails").style.display = "block";
+<section class="description-box">
+
+  <h2>
+    PRODUCT DETAILS
+  </h2>
+
+  <p>
+    THE 3D ROTATING MOON LAMP IS A BEAUTIFUL AND MODERN
+    DECORATION PIECE FOR YOUR HOME. ITS MOON-INSPIRED
+    DESIGN CREATES A PREMIUM LOOK AND MAKES IT A GREAT
+    CHOICE FOR BEDROOMS, LIVING SPACES, STUDY AREAS AND
+    GIFTING.
+  </p>
+
+</section>
+
+  </main>  <footer>
+    © 2026 MA ROYAR • ALL RIGHTS RESERVED
+  </footer>  <script>
+
+    function changeImage(image) {
+      document.getElementById("mainImage").src = image;
     }
 
-    function closeProduct() {
-      document.getElementById("productDetails").style.display = "none";
-    }
   </script></body>
-</html>
+  </html>
