@@ -1,193 +1,143 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>MA ROYAR LION WALK</title>
+<!-- PRODUCT CARD -->
+<div class="product-card">
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial;
-      background:#fff;
-      color:#111;
-    }
+  <!-- Product Name -->
+  <h2>Rotating Moon Lamp</h2>
 
-    /* BRAND */
-    .brand{
-      text-align:center;
-      padding:25px 10px;
-      border-bottom:1px solid #eee;
-    }
+  <!-- Main Picture: sirf 1 picture nazar ayegi -->
+  <img 
+    src="images/moon-lamp-1.jpg" 
+    alt="Rotating Moon Lamp"
+    class="product-main-image"
+  >
 
-    .brand h1{
-      margin:0;
-      letter-spacing:4px;
-      font-size:22px;
-    }
+  <!-- Proper Name -->
+  <p class="product-name">3D Rotating Moon Lamp</p>
 
-    .brand p{
-      font-size:12px;
-      color:#666;
-      letter-spacing:2px;
-    }
-
-    /* TITLE */
-    .title{
-      margin:30px 20px 10px;
-      font-size:14px;
-      font-weight:bold;
-      letter-spacing:3px;
-      border-left:4px solid black;
-      padding-left:10px;
-    }
-
-    /* GRID 3 COLUMNS */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:15px;
-      padding:10px 20px;
-    }
-
-    .item{
-      border:1px solid #eee;
-      border-radius:10px;
-      overflow:hidden;
-      text-align:center;
-      background:#fff;
-    }
-
-    .item img{
-      width:100%;
-      height:140px;
-      object-fit:cover;
-    }
-
-    .name{
-      font-size:12px;
-      font-weight:bold;
-      letter-spacing:2px;
-      margin-top:8px;
-      text-transform:uppercase;
-    }
-
-    button{
-      width:90%;
-      margin:10px 0;
-      padding:8px;
-      border:none;
-      background:black;
-      color:white;
-      border-radius:5px;
-      cursor:pointer;
-      font-size:11px;
-      letter-spacing:2px;
-    }
-
-    button:hover{
-      background:#333;
-    }
-
-    /* MOBILE FIX */
-    @media(max-width:768px){
-      .grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-    }
-
-    @media(max-width:480px){
-      .grid{
-        grid-template-columns:1fr;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-<!-- BRAND -->
-<div class="brand">
-  <h1>MA ROYAR LION WALK</h1>
-  <p>ROYAL • CONFIDENCE • OUTFIT</p>
-</div>
-
-<!-- SHIRTS -->
-<div class="title">SHIRTS COLLECTION</div>
-<div class="grid">
-
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?shirt,fashion">
-    <div class="name">SHIRT 01</div>
-    <button onclick="buy('SHIRT 01')">ORDER</button>
-  </div>
-
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?shirt,style">
-    <div class="name">SHIRT 02</div>
-    <button onclick="buy('SHIRT 02')">ORDER</button>
-  </div>
-
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?shirt,men">
-    <div class="name">SHIRT 03</div>
-    <button onclick="buy('SHIRT 03')">ORDER</button>
-  </div>
+  <!-- View More -->
+  <button class="view-more-btn" onclick="openProduct()">
+    View More
+  </button>
 
 </div>
 
-<!-- PANTS -->
-<div class="title">DRESSING PANTS</div>
-<div class="grid">
 
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?pants,formal">
-    <div class="name">PANT 01</div>
-    <button onclick="buy('PANT 01')">ORDER</button>
+<!-- HIDDEN PRODUCT DETAILS -->
+<div id="productDetails" class="product-details">
+
+  <button class="close-btn" onclick="closeProduct()">×</button>
+
+  <h2>Rotating Moon Lamp</h2>
+
+  <p>3D Rotating Moon Lamp</p>
+
+  <!-- Baki pictures -->
+  <div class="product-gallery">
+    <img src="images/moon-lamp-2.jpg" alt="Moon Lamp">
+    <img src="images/moon-lamp-3.jpg" alt="Moon Lamp">
+    <img src="images/moon-lamp-4.jpg" alt="Moon Lamp">
   </div>
 
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?trousers,fashion">
-    <div class="name">PANT 02</div>
-    <button onclick="buy('PANT 02')">ORDER</button>
-  </div>
-
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?jeans,men">
-    <div class="name">PANT 03</div>
-    <button onclick="buy('PANT 03')">ORDER</button>
-  </div>
+  <p class="description">
+    Beautiful 3D Rotating Moon Lamp for your room, bedroom or decoration.
+  </p>
 
 </div>
 
-<!-- WATCHES -->
-<div class="title">WATCH COLLECTION</div>
-<div class="grid">
 
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?watch,luxury">
-    <div class="name">WATCH 01</div>
-    <button onclick="buy('WATCH 01')">ORDER</button>
-  </div>
+<style>
+.product-card {
+  width: 300px;
+  padding: 15px;
+  text-align: center;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+  margin: 20px auto;
+}
 
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?watch,classic">
-    <div class="name">WATCH 02</div>
-    <button onclick="buy('WATCH 02')">ORDER</button>
-  </div>
+.product-card h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
 
-  <div class="item">
-    <img src="https://source.unsplash.com/300x300/?watch,style">
-    <div class="name">WATCH 03</div>
-    <button onclick="buy('WATCH 03')">ORDER</button>
-  </div>
+.product-main-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-</div>
+.product-name {
+  font-size: 17px;
+  margin: 12px 0;
+  font-weight: 600;
+}
+
+.view-more-btn {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.view-more-btn:hover {
+  opacity: 0.8;
+}
+
+.product-details {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.product-gallery img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.close-btn {
+  float: right;
+  border: none;
+  background: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.6;
+}
+</style>
+
 
 <script>
-function buy(p){
-  window.open("https://wa.me/923180991880?text=ORDER: " + p);
+function openProduct() {
+  document.getElementById("productDetails").style.display = "block";
+}
+
+function closeProduct() {
+  document.getElementById("productDetails").style.display = "none";
 }
 </script>
-
-</body>
-        </html>
