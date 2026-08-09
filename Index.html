@@ -1,53 +1,16 @@
-<!-- PRODUCT CARD -->
-<div class="product-card">
+<!-- PRODUCT CARD --><div class="product-card">  <h2>ROTATING MOON LAMP</h2><img
+src="images/moon-lamp-1.jpg"
+alt="ROTATING MOON LAMP"
+class="product-main-image"
 
-  <!-- Product Name -->
-  <h2>Rotating Moon Lamp</h2>
+«»
 
-  <!-- Main Picture: sirf 1 picture nazar ayegi -->
-  <img 
-    src="images/moon-lamp-1.jpg" 
-    alt="Rotating Moon Lamp"
-    class="product-main-image"
-  >
+  <p class="product-name">
+    3D ROTATING MOON LAMP
+  </p>  <a href="product.html" class="view-more-btn">
+    VIEW MORE
+  </a></div><style>
 
-  <!-- Proper Name -->
-  <p class="product-name">3D Rotating Moon Lamp</p>
-
-  <!-- View More -->
-  <button class="view-more-btn" onclick="openProduct()">
-    View More
-  </button>
-
-</div>
-
-
-<!-- HIDDEN PRODUCT DETAILS -->
-<div id="productDetails" class="product-details">
-
-  <button class="close-btn" onclick="closeProduct()">×</button>
-
-  <h2>Rotating Moon Lamp</h2>
-
-  <p>3D Rotating Moon Lamp</p>
-
-  <!-- Baki pictures -->
-  <div class="product-gallery">
-    <img src="images/moon-lamp-2.jpg" alt="Moon Lamp">
-    <img src="images/moon-lamp-3.jpg" alt="Moon Lamp">
-    <video controls width="100%">
-  <source src="images/moon-lamp-video.mp4" type="video/mp4">
-</video>
-  </div>
-
-  <p class="description">
-    Beautiful 3D Rotating Moon Lamp for your room, bedroom or decoration.
-  </p>
-
-</div>
-
-
-<style>
 .product-card {
   width: 300px;
   padding: 15px;
@@ -77,6 +40,7 @@
 }
 
 .view-more-btn {
+  display: inline-block;
   border: none;
   padding: 12px 25px;
   border-radius: 25px;
@@ -84,62 +48,13 @@
   color: white;
   cursor: pointer;
   font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .view-more-btn:hover {
   opacity: 0.8;
+  transform: translateY(-2px);
 }
 
-.product-details {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 90%;
-  max-width: 600px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 25px;
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-}
-
-.product-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.product-gallery img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.close-btn {
-  float: right;
-  border: none;
-  background: none;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.description {
-  font-size: 16px;
-  line-height: 1.6;
-}
-</style>
-
-
-<script>
-function openProduct() {
-  document.getElementById("productDetails").style.display = "block";
-}
-
-function closeProduct() {
-  document.getElementById("productDetails").style.display = "none";
-}
-</script>
+  </style>
