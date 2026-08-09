@@ -1,132 +1,424 @@
-<!DOCTYPE html><html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ROYAR WORLD | MA ROYAR LION</title><style>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MA ROYAR PRODUCTS | TRENDING ROYAL DECORATE</title><style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
-  font-family:Arial,sans-serif;
-  background:#fff;
-  color:#111;
+  font-family:Arial, Helvetica, sans-serif;
+  background:#050505;
+  color:#fff;
+}
+
+
+/* =========================
+   TOP BRAND
+========================= */
+
+.header{
+  text-align:center;
+  padding:55px 20px 42px;
+  background:
+    radial-gradient(circle at top, #252525 0%, #090909 45%, #050505 100%);
+  border-bottom:1px solid #292929;
 }
 
 .logo{
-  text-align:center;
-  padding:30px 15px;
-  border-bottom:1px solid #eee;
-}
-
-.logo h1{
   margin:0;
+  font-size:42px;
+  font-weight:900;
   letter-spacing:5px;
-  font-size:28px;
+  line-height:1.1;
 }
 
-.logo p{
-  color:#666;
-  letter-spacing:3px;
-  font-size:12px;
-}
-
-.title{
-  margin:35px 20px 15px;
-  font-size:16px;
+.tagline{
+  margin-top:15px;
+  font-size:13px;
   font-weight:bold;
-  letter-spacing:3px;
-  border-left:4px solid #000;
-  padding-left:10px;
+  letter-spacing:5px;
+  color:#d4af37;
 }
 
-.grid{
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+  text-align:center;
+  padding:55px 20px 25px;
+}
+
+.small-title{
+  color:#d4af37;
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:4px;
+  margin-bottom:14px;
+}
+
+.intro h2{
+  margin:0;
+  font-size:34px;
+  font-weight:900;
+  letter-spacing:2px;
+}
+
+.intro p{
+  max-width:620px;
+  margin:18px auto 0;
+  color:#999;
+  font-size:14px;
+  line-height:1.8;
+}
+
+
+/* =========================
+   PRODUCT SECTION
+========================= */
+
+.products{
+  width:92%;
+  max-width:1050px;
+  margin:35px auto 70px;
+}
+
+.product-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:15px;
-  padding:0 20px 20px;
+  gap:25px;
 }
 
-.card{
-  border:1px solid #eee;
-  border-radius:10px;
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card{
   overflow:hidden;
-  text-align:center;
-  background:#fff;
+  background:#101010;
+  border:1px solid #292929;
+  border-radius:20px;
+  box-shadow:0 15px 45px rgba(0,0,0,.45);
+  transition:.3s;
 }
 
-.card img{
+.product-card:hover{
+  transform:translateY(-5px);
+  border-color:#d4af37;
+}
+
+
+.product-image{
   width:100%;
-  height:180px;
+  height:390px;
+  display:block;
   object-fit:cover;
 }
 
-.name{
+
+.product-info{
+  padding:25px;
+  text-align:center;
+}
+
+
+.product-label{
+  color:#d4af37;
+  font-size:10px;
   font-weight:bold;
-  padding:12px;
-  font-size:13px;
+  letter-spacing:3px;
+}
+
+
+.product-name{
+  margin:12px 0 10px;
+  font-size:22px;
+  font-weight:900;
   letter-spacing:1px;
 }
 
-.btn{
-  display:block;
-  margin:0 10px 12px;
-  padding:10px;
-  background:#000;
-  color:#fff;
-  text-decoration:none;
-  border-radius:6px;
+
+.product-text{
+  margin:0 auto 18px;
+  color:#999;
+  font-size:13px;
+  line-height:1.7;
+  max-width:430px;
 }
 
-.btn:hover{
-  opacity:0.8;
+
+.price{
+  margin-bottom:20px;
+  color:#d4af37;
+  font-size:26px;
+  font-weight:900;
 }
-</style></head><body><div class="logo">
-  <h1>🦁 MA ROYAR LION WALK</h1>
-  <p>ROYAL • CONFIDENCE • TRENDING</p>
-</div><!-- SHIRTS --><div class="title">SHIRTS COLLECTION</div><div class="grid"><div class="card">
-<img src="https://picsum.photos/400/400?1">
-<div class="name">ROYAL BLACK SHIRT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?2">
-<div class="name">LION WHITE SHIRT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?3">
-<div class="name">CONFIDENCE BLUE SHIRT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?4">
-<div class="name">SIGNATURE FORMAL SHIRT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div></div><!-- DRESSING PANTS --><div class="title">DRESSING PANTS COLLECTION</div><div class="grid"><div class="card">
-<img src="https://picsum.photos/400/400?5">
-<div class="name">ROYAL FIT PANT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?6">
-<div class="name">CLASSIC FORMAL PANT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?7">
-<div class="name">PREMIUM DRESS PANT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?8">
-<div class="name">SIGNATURE BLACK PANT</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div></div><!-- WATCHES --><div class="title">WATCH COLLECTION</div><div class="grid"><div class="card">
-<img src="https://picsum.photos/400/400?9">
-<div class="name">ROYAL WATCH</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?10">
-<div class="name">LION WATCH</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?11">
-<div class="name">PRESTIGE WATCH</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div><div class="card">
-<img src="https://picsum.photos/400/400?12">
-<div class="name">SIGNATURE WATCH</div>
-<a class="btn" href="product.html">VIEW DETAILS</a>
-</div></div></body>
-  </html>
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.view-button{
+  display:block;
+  width:100%;
+  padding:15px;
+  border-radius:9px;
+  background:#d4af37;
+  color:#000;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.view-button:hover{
+  background:#fff;
+  transform:scale(1.02);
+}
+
+
+/* =========================
+   WHY ROYAR
+========================= */
+
+.why{
+  width:92%;
+  max-width:1050px;
+  margin:0 auto 70px;
+  text-align:center;
+}
+
+.why h2{
+  margin-bottom:25px;
+  font-size:24px;
+  letter-spacing:2px;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.why-card{
+  padding:25px 15px;
+  background:#101010;
+  border:1px solid #292929;
+  border-radius:14px;
+}
+
+.why-icon{
+  font-size:25px;
+  margin-bottom:12px;
+}
+
+.why-card strong{
+  display:block;
+  color:#d4af37;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+
+.why-card span{
+  color:#888;
+  font-size:11px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  padding:35px 20px;
+  text-align:center;
+  border-top:1px solid #242424;
+  background:#030303;
+}
+
+.footer-logo{
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.footer-text{
+  margin-top:10px;
+  color:#666;
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:750px){
+
+  .logo{
+    font-size:30px;
+    letter-spacing:4px;
+  }
+
+  .tagline{
+    font-size:10px;
+    letter-spacing:3px;
+  }
+
+  .intro{
+    padding-top:40px;
+  }
+
+  .intro h2{
+    font-size:27px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-image{
+    height:360px;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style></head><body><!-- =========================
+     BRAND
+========================= --><header class="header">  <h1 class="logo">
+    MA ROYAR PRODUCTS
+  </h1>  <div class="tagline">
+    TRENDING | ROYAL | DECORATE
+  </div></header><!-- =========================
+     INTRO
+========================= --><section class="intro">  <div class="small-title">
+    WELCOME TO ROYAR WORLD
+  </div>  <h2>
+    DISCOVER SOMETHING UNIQUE
+  </h2>  <p>
+    TRENDING PRODUCTS SELECTED TO BRING
+    STYLE, BEAUTY AND A ROYAL TOUCH TO
+    YOUR EVERYDAY LIFE.
+  </p></section><!-- =========================
+     PRODUCTS
+========================= --><section class="products">  <div class="product-grid"><!-- MOON LAMP -->
+
+<div class="product-card">
+
+  <img
+    class="product-image"
+    src="images/moon-lamp-1.jpg"
+    alt="3D Rotating Moon Lamp"
+  >
+
+  <div class="product-info">
+
+    <div class="product-label">
+      TRENDING PRODUCT
+    </div>
+
+    <div class="product-name">
+      3D ROTATING MOON LAMP
+    </div>
+
+    <p class="product-text">
+      A BEAUTIFUL MOON-INSPIRED LAMP
+      WITH A UNIQUE ROTATING EFFECT.
+      PERFECT FOR BEDROOMS, ROOM DECORATION
+      AND GIFTING.
+    </p>
+
+    <div class="price">
+      RS. 14,999
+    </div>
+
+    <a
+      href="product.html"
+      class="view-button"
+    >
+      VIEW PRODUCT
+    </a>
+
+  </div>
+
+</div>
+
+  </div></section><!-- =========================
+     WHY ROYAR
+========================= --><section class="why">  <h2>
+    WHY CHOOSE ROYAR?
+  </h2>  <div class="why-grid"><div class="why-card">
+
+  <div class="why-icon">
+    👑
+  </div>
+
+  <strong>
+    ROYAL STYLE
+  </strong>
+
+  <span>
+    PRODUCTS WITH A PREMIUM LOOK
+  </span>
+
+</div>
+
+
+<div class="why-card">
+
+  <div class="why-icon">
+    ✨
+  </div>
+
+  <strong>
+    TRENDING PRODUCTS
+  </strong>
+
+  <span>
+    UNIQUE PRODUCTS FOR MODERN LIFESTYLE
+  </span>
+
+</div>
+
+
+<div class="why-card">
+
+  <div class="why-icon">
+    📱
+  </div>
+
+  <strong>
+    EASY ORDER
+  </strong>
+
+  <span>
+    SIMPLE ONLINE ORDER THROUGH WHATSAPP
+  </span>
+
+</div>
+
+  </div></section><!-- =========================
+     FOOTER
+========================= --><footer>  <div class="footer-logo">
+    MA ROYAR
+  </div>  <div class="footer-text">
+    TRENDING | ROYAL | DECORATE
+  </div></footer></body></html>
