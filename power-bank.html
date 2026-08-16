@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MA ROYAR 30000mAh DIGITAL DISPLAY POWER BANK</title>
+
+<style>
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050505;
+  color:#fff;
+}
+
+/* HEADER */
+
+.header{
+  text-align:center;
+  padding:35px 20px;
+  background:
+    radial-gradient(circle at top,#292929 0%,#090909 45%,#050505 100%);
+  border-bottom:1px solid #292929;
+}
+
+.logo{
+  margin:0;
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:4px;
+}
+
+.tagline{
+  margin-top:10px;
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:4px;
+  color:#d4af37;
+}
+
+/* PRODUCT */
+
+.product{
+  width:92%;
+  max-width:900px;
+  margin:45px auto 70px;
+}
+
+.main-card{
+  background:#101010;
+  border:1px solid #292929;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 45px rgba(0,0,0,.5);
+}
+
+.main-image{
+  width:100%;
+  max-height:550px;
+  object-fit:cover;
+  display:block;
+}
+
+.product-info{
+  padding:30px 25px;
+  text-align:center;
+}
+
+.label{
+  color:#d4af37;
+  font-size:10px;
+  font-weight:bold;
+  letter-spacing:3px;
+}
+
+.product-name{
+  margin:14px 0;
+  font-size:30px;
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1.25;
+}
+
+.description{
+  max-width:700px;
+  margin:0 auto 25px;
+  color:#999;
+  font-size:14px;
+  line-height:1.8;
+}
+
+/* PRICE */
+
+.price{
+  margin:20px 0 25px;
+}
+
+.old-price{
+  color:#777;
+  text-decoration:line-through;
+  font-size:17px;
+  margin-right:10px;
+}
+
+.sale-price{
+  color:#d4af37;
+  font-size:30px;
+  font-weight:900;
+}
+
+/* ORDER BUTTON */
+
+.order-button{
+  display:block;
+  width:100%;
+  padding:17px;
+  border-radius:9px;
+  background:#d4af37;
+  color:#000;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:2px;
+  transition:.3s;
+}
+
+.order-button:hover{
+  background:#fff;
+  transform:scale(1.02);
+}
+
+/* FEATURES */
+
+.features{
+  margin-top:30px;
+  padding:25px;
+  background:#0b0b0b;
+  border:1px solid #292929;
+  border-radius:15px;
+  text-align:left;
+}
+
+.features h2{
+  margin-top:0;
+  text-align:center;
+  font-size:20px;
+  letter-spacing:2px;
+}
+
+.features ul{
+  margin:20px 0 0;
+  padding-left:22px;
+  color:#aaa;
+  line-height:2;
+}
+
+.features li::marker{
+  color:#d4af37;
+}
+
+/* GALLERY */
+
+.gallery-section{
+  margin-top:35px;
+}
+
+.gallery-title{
+  text-align:center;
+  font-size:22px;
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.gallery img,
+.gallery video{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  display:block;
+  border-radius:14px;
+  border:1px solid #292929;
+  background:#000;
+}
+
+/* BACK BUTTON */
+
+.back-button{
+  display:block;
+  width:100%;
+  margin-top:30px;
+  padding:15px;
+  border:1px solid #d4af37;
+  border-radius:9px;
+  color:#d4af37;
+  text-align:center;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+.back-button:hover{
+  background:#d4af37;
+  color:#000;
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px 20px;
+  text-align:center;
+  border-top:1px solid #242424;
+  background:#030303;
+}
+
+.footer-logo{
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:3px;
+}
+
+.footer-text{
+  margin-top:10px;
+  color:#666;
+  font-size:10px;
+  letter-spacing:2px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  .product-name{
+    font-size:23px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img,
+  .gallery video{
+    height:280px;
+  }
+
+  .main-image{
+    max-height:450px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+  <h1 class="logo">
+    MA ROYAR
+  </h1>
+
+  <div class="tagline">
+    TRENDING | ROYAL | DECORATE
+  </div>
+
+</header>
+
+
+<!-- PRODUCT -->
+
+<section class="product">
+
+  <div class="main-card">
+
+    <!-- MAIN PRODUCT IMAGE -->
+
+    <img
+      class="main-image"
+      src="power-bank-9.jpg"
+      alt="MA ROYAR 30000mAh Digital Display Power Bank"
+    >
+
+    <div class="product-info">
+
+      <div class="label">
+        TRENDING PRODUCT
+      </div>
+
+      <h1 class="product-name">
+        MA ROYAR 30000mAh DIGITAL DISPLAY POWER BANK
+      </h1>
+
+      <p class="description">
+        POWERFUL 30000mAh HIGH-CAPACITY POWER BANK
+        DESIGNED FOR EVERYDAY USE, TRAVEL, WORK,
+        UNIVERSITY AND LONG JOURNEYS.
+        THE DIGITAL DISPLAY HELPS YOU CHECK
+        THE REMAINING BATTERY LEVEL EASILY.
+      </p>
+
+      <!-- PRICE -->
+
+      <div class="price">
+
+        <span class="old-price">
+          RS. 12,999
+        </span>
+
+        <span class="sale-price">
+          RS. 10,000
+        </span>
+
+      </div>
+
+      <!-- WHATSAPP ORDER -->
+
+      <a
+        href="https://wa.me/923180991880?text=I%20want%20to%20order%20the%20MA%20ROYAR%2030000mAh%20Power%20Bank"
+        class="order-button"
+        target="_blank"
+      >
+        ORDER NOW ON WHATSAPP
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- FEATURES -->
+
+  <div class="features">
+
+    <h2>
+      PRODUCT FEATURES
+    </h2>
+
+    <ul>
+
+      <li>30000mAh High-Capacity Battery</li>
+
+      <li>Digital Battery Display</li>
+
+      <li>Multiple Charging Ports</li>
+
+      <li>Type-C Input</li>
+
+      <li>Micro-USB Input</li>
+
+      <li>Built-in LED Light</li>
+
+      <li>Suitable For Travel & Daily Use</li>
+
+      <li>Compatible With Multiple Devices</li>
+
+    </ul>
+
+  </div>
+
+
+  <!-- GALLERY -->
+
+  <div class="gallery-section">
+
+    <h2 class="gallery-title">
+      PRODUCT GALLERY
+    </h2>
+
+    <div class="gallery">
+
+      <!-- VIDEOS 1-8 -->
+
+      <video controls preload="metadata">
+        <source src="power-bank-1.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-2.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-3.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-4.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-5.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-6.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-7.mp4" type="video/mp4">
+      </video>
+
+      <video controls preload="metadata">
+        <source src="power-bank-8.mp4" type="video/mp4">
+      </video>
+
+
+      <!-- PICTURES 9-14 -->
+
+      <img src="power-bank-9.jpg" alt="Power Bank">
+      <img src="power-bank-10.jpg" alt="Power Bank">
+      <img src="power-bank-11.jpg" alt="Power Bank">
+      <img src="power-bank-12.jpg" alt="Power Bank">
+      <img src="power-bank-13.jpg" alt="Power Bank">
+      <img src="power-bank-14.jpg" alt="Power Bank">
+
+    </div>
+
+  </div>
+
+
+  <!-- BACK TO HOME -->
+
+  <a
+    href="index.html"
+    class="back-button"
+  >
+    ← BACK TO PRODUCTS
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">
+    MA ROYAR
+  </div>
+
+  <div class="footer-text">
+    TRENDING | ROYAL | DECORATE
+  </div>
+
+</footer>
+
+</body>
+  </html>
