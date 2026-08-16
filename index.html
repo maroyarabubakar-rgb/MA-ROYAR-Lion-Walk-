@@ -249,6 +249,15 @@ footer{
   letter-spacing:2px;
 }
 
+/* LOADING STATE */
+.loading-text {
+  text-align: center;
+  font-size: 16px;
+  color: #d4af37;
+  grid-column: 1 / -1;
+  padding: 40px;
+}
+
 /* MOBILE */
 
 @media(max-width:750px){
@@ -332,105 +341,9 @@ footer{
 
 <section class="products">
 
-  <div class="product-grid">
-
-
-    <!-- ========================= -->
-    <!-- MOON LAMP -->
-    <!-- ========================= -->
-
-    <div class="product-card">
-
-      <img
-        class="product-image"
-        src="moon-lamp-1.jpg"
-        alt="3D Rotating Moon Lamp"
-      >
-
-      <div class="product-info">
-
-        <div class="product-label">
-          TRENDING PRODUCT
-        </div>
-
-        <div class="product-name">
-          3D ROTATING MOON LAMP
-        </div>
-
-        <p class="product-text">
-          A BEAUTIFUL MOON-INSPIRED LAMP
-          WITH A UNIQUE ROTATING EFFECT.
-          PERFECT FOR BEDROOMS, ROOM DECORATION
-          AND GIFTING.
-        </p>
-
-        <div class="price">
-          RS. 14,999
-        </div>
-
-        <a
-          href="product.html"
-          class="view-button"
-        >
-          VIEW PRODUCT
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- POWER BANK -->
-    <!-- ========================= -->
-
-    <div class="product-card">
-
-      <img
-        class="product-image"
-        src="power-bank-9.jpg"
-        alt="MA ROYAR 30000mAh Digital Display Power Bank"
-      >
-
-      <div class="product-info">
-
-        <div class="product-label">
-          TRENDING PRODUCT
-        </div>
-
-        <div class="product-name">
-          MA ROYAR 30000mAh DIGITAL DISPLAY POWER BANK
-        </div>
-
-        <p class="product-text">
-          POWERFUL 30000mAh HIGH-CAPACITY POWER BANK
-          WITH DIGITAL DISPLAY AND MULTIPLE CHARGING PORTS.
-          PERFECT FOR TRAVEL, WORK, UNIVERSITY
-          AND EVERYDAY USE.
-        </p>
-
-        <div class="price">
-
-          <span class="old-price">
-            RS. 12,999
-          </span>
-
-          RS. 10,000
-
-        </div>
-
-        <a
-          href="power-bank.html"
-          class="view-button"
-        >
-          VIEW PRODUCT
-        </a>
-
-      </div>
-
-    </div>
-
-
+  <div class="product-grid" id="supabase-products">
+    <!-- Yahan Supabase Database se data load ho kar khud ba khud card banayega -->
+    <div class="loading-text">Loading Products...</div>
   </div>
 
 </section>
@@ -517,6 +430,58 @@ footer{
 
 </footer>
 
+<!-- SUPABASE CONNECTION SCRIPT -->
+<script>
+  async function loadProducts() {
+    const grid = document.getElementById('supabase-products');
+    try {
+      // Naye Supabase Project ka direct public link
+      const response = await fetch('https://supabase.co*', {
+        headers: {
+          'apikey': 'anon', 
+          'Authorization': 'Bearer anon'
+        }
+      });
+      
+      const products = await response.json();
+      grid.innerHTML = ''; // Loading text mitao
+
+      if(products.length === 0) {
+        grid.innerHTML = '<div class="loading-text">No products found in database.</div>';
+        return;
+      }
+
+      products.forEach(item => {
+        // Dinamic Button Links handle karne ke liye logic
+        let buttonPage = "product.html";
+        if(item.name.toLowerCase().includes('power bank')) {
+          buttonPage = "power-bank.html";
+        }
+
+        const card = `
+          <div class="product-card">
+            <img class="product-image" src="${item.image_url}" alt="${item.name}">
+            <div class="product-info">
+              <div class="product-label">TRENDING PRODUCT</div>
+              <div class="product-name">${item.name.toUpperCase()}</div>
+              <p class="product-text">${item.description || ''}</p>
+              <div class="price">RS. ${Number(item.price).toLocaleString()}</div>
+              <a href="${buttonPage}" class="view-button">VIEW PRODUCT</a>
+            </div>
+          </div>
+        `;
+        grid.innerHTML += card;
+      });
+    } catch (error) {
+      console.error(error);
+      grid.innerHTML = '<div class="loading-text">Error loading products from server.</div>';
+    }
+  }
+
+  // Page load hote hi chalao
+  window.onload = loadProducts;
+</script>
 
 </body>
-    </html>
+  </html>
+  
