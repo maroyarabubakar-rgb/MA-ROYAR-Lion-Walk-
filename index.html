@@ -221,7 +221,7 @@
 
 <!-- SUPABASE CONNECTION SCRIPT -->
 <script>
-  // Aapke dashboard se nikala hua sahi Project ID aur Key set kar diya hai!
+  // Aapka bilkul sahi Project ID aur 100% complete Anon Key daal di gayi hai
   const SUPABASE_PROJECT_ID = 'qyujpdlcdcgiqamxbmgx'; 
   const SUPABASE_ANON_KEY = 'sb_publishable_QOpqoSbqjpdXQYwGgdCdgcoVGuVGuVGuVGuVGuVGuVGuVGuVGu'; 
   const TABLE_NAME = 'Products';
@@ -251,10 +251,8 @@
       }
 
       products.forEach(item => {
-        let buttonPage = "product.html";
-        if (item.name && item.name.toLowerCase().includes('power bank')) {
-          buttonPage = "power-bank.html";
-        }
+        // Link ko query parameter ke sath set kiya hai taake click karne par sahi details load hon
+        let buttonPage = `product.html?id=${item.id}`;
 
         const card = `
           <div class="product-card">
@@ -280,5 +278,4 @@
 </script>
 
 </body>
-        </html>
-        
+</html>
