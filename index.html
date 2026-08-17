@@ -5,258 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MA ROYAR - Trending Products</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    body {
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background-color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 2px solid #e0e0e0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .logo {
-      font-size: 28px;
-      font-weight: 800;
-      color: #111;
-      letter-spacing: 2px;
-    }
-    .tagline {
-      font-size: 12px;
-      color: #777;
-      margin-top: 5px;
-      letter-spacing: 1px;
-    }
-    .products-container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .section-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 30px;
-      text-align: center;
-      position: relative;
-    }
-    .section-title::after {
-      content: '';
-      display: block;
-      width: 50px;
-      height: 3px;
-      background-color: #111;
-      margin: 10px auto 0;
-    }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .product-card {
-      background-color: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-    }
-    .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    }
-    .product-image {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      background-color: #eaeaea;
-    }
-    .product-info {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .product-label {
-      font-size: 10px;
-      font-weight: 700;
-      color: #e67e22;
-      letter-spacing: 1px;
-      margin-bottom: 5px;
-    }
-    .product-name {
-      font-size: 18px;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-    .product-text {
-      font-size: 14px;
-      color: #666;
-      margin-bottom: 15px;
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-    .price {
-      font-size: 20px;
-      font-weight: 800;
-      color: #2c3e50;
-      margin-bottom: 15px;
-    }
-    .view-button {
-      display: block;
-      text-align: center;
-      background-color: #111;
-      color: #fff;
-      padding: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      border-radius: 4px;
-      transition: background-color 0.2s ease;
-    }
-    .view-button:hover {
-      background-color: #333;
-    }
-    .loading-text {
-      grid-column: 1 / -1;
-      text-align: center;
-      font-size: 16px;
-      color: #666;
-      padding: 40px 0;
-    }
-    .why-section {
-      background-color: #f0f0f0;
-      padding: 60px 20px;
-      margin-top: 60px;
-    }
-    .why-grid {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .why-card {
-      background-color: #fff;
-      padding: 30px;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-    }
-    .why-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-    .why-card strong {
-      display: block;
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: #111;
-    }
-    .why-card span {
-      font-size: 12px;
-      color: #777;
-    }
-    footer {
-      background-color: #111;
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .footer-logo {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-    .footer-text {
-      font-size: 12px;
-      color: #aaa;
-      letter-spacing: 1px;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background-color: #f9f9f9; color: #333; }
+    header { background-color: #fff; padding: 20px; text-align: center; border-bottom: 2px solid #e0e0e0; }
+    .logo { font-size: 28px; font-weight: 800; color: #111; letter-spacing: 2px; }
+    .tagline { font-size: 12px; color: #777; margin-top: 5px; letter-spacing: 1px; }
+    .products-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .section-title { font-size: 24px; font-weight: 700; margin-bottom: 30px; text-align: center; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+    .product-card { background-color: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+    .product-image { width: 100%; height: 250px; object-fit: cover; background-color: #eaeaea; }
+    .product-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+    .product-label { font-size: 10px; font-weight: 700; color: #e67e22; margin-bottom: 5px; }
+    .product-name { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 10px; }
+    .product-text { font-size: 14px; color: #666; margin-bottom: 15px; flex-grow: 1; }
+    .price { font-size: 20px; font-weight: 800; color: #2c3e50; margin-bottom: 15px; }
+    .view-button { display: block; text-align: center; background-color: #111; color: #fff; padding: 12px; text-decoration: none; font-weight: 600; border-radius: 4px; }
+    .loading-text { grid-column: 1 / -1; text-align: center; padding: 40px 0; color: #666; }
+    .why-section { background-color: #f0f0f0; padding: 60px 20px; margin-top: 60px; }
+    .why-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .why-card { background-color: #fff; padding: 30px; text-align: center; border-radius: 8px; }
+    .why-icon { font-size: 40px; margin-bottom: 15px; }
+    .why-card strong { display: block; margin-bottom: 10px; color: #111; }
+    .why-card span { font-size: 12px; color: #777; }
+    footer { background-color: #111; color: #fff; text-align: center; padding: 40px 20px; }
+    .footer-logo { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .footer-text { font-size: 12px; color: #aaa; }
   </style>
 </head>
 <body>
-
 <header>
   <div class="logo">MA ROYAR</div>
   <div class="tagline">TRENDING | ROYAL | DECORATE</div>
 </header>
-
 <main class="products-container">
   <h2 class="section-title">TRENDING PRODUCTS</h2>
   <div class="products-grid" id="supabase-products">
     <div class="loading-text">Loading premium products...</div>
   </div>
 </main>
-
 <section class="why-section">
   <div class="why-grid">
-    <div class="why-card">
-      <div class="why-icon">🛡️</div>
-      <strong>100% SECURE</strong>
-      <span>UNIQUE PRODUCTS FOR MODERN LIFESTYLE</span>
-    </div>
-    <div class="why-card">
-      <div class="why-icon">📱</div>
-      <strong>EASY ORDER</strong>
-      <span>SIMPLE ONLINE ORDER THROUGH WHATSAPP</span>
-    </div>
+    <div class="why-card"><div class="why-icon">🛡️</div><strong>100% SECURE</strong><span>UNIQUE PRODUCTS FOR MODERN LIFESTYLE</span></div>
+    <div class="why-card"><div class="why-icon">📱</div><strong>EASY ORDER</strong><span>SIMPLE ONLINE ORDER THROUGH WHATSAPP</span></div>
   </div>
 </section>
-
 <footer>
   <div class="footer-logo">MA ROYAR</div>
   <div class="footer-text">TRENDING | ROYAL | DECORATE</div>
 </footer>
-
-<!-- SUPABASE CONNECTION SCRIPT -->
 <script>
-  // Aapka bilkul sahi Project ID aur 100% complete Anon Key daal di gayi hai
   const SUPABASE_PROJECT_ID = 'qyujpdlcdcgiqamxbmgx'; 
-  const SUPABASE_ANON_KEY = 'sb_publishable_QOpqoSbqjpdXQYwGgdCdgcoVGuVGuVGuVGuVGuVGuVGuVGuVGu'; 
+  const SUPABASE_ANON_KEY = 'sb_publishable_Q0pQ0SSWelTGjWkFEaHUKQ_KhxU0C_1'; 
   const TABLE_NAME = 'Products';
-
   async function loadProducts() {
     const grid = document.getElementById('supabase-products');
     const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?select=*`;
-
     try {
-      const response = await fetch(url, {
-        headers: {
-          'apikey': SUPABASE_ANON_KEY, 
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-        }
-      });
-      
-      if (!response.ok) {
-        throw new Error(`Server responded with status: ${response.status}`);
-      }
-      
+      const response = await fetch(url, { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } });
       const products = await response.json();
       grid.innerHTML = ''; 
-
-      if (products.length === 0) {
-        grid.innerHTML = '<div class="loading-text">No products found in database.</div>';
-        return;
-      }
-
+      if (products.length === 0) { grid.innerHTML = '<div class="loading-text">No products found.</div>'; return; }
       products.forEach(item => {
-        // Link ko query parameter ke sath set kiya hai taake click karne par sahi details load hon
         let buttonPage = `product.html?id=${item.id}`;
-
-        const card = `
+        grid.innerHTML += `
           <div class="product-card">
-            <img class="product-image" src="${item.image_url || 'placeholder.jpg'}" alt="${item.name || 'Product'}">
+            <img class="product-image" src="${item.image_url || 'placeholder.jpg'}" alt="${item.name}">
             <div class="product-info">
               <div class="product-label">TRENDING PRODUCT</div>
               <div class="product-name">${(item.name || '').toUpperCase()}</div>
@@ -264,18 +78,11 @@
               <div class="price">RS. ${item.price ? Number(item.price).toLocaleString() : '0'}</div>
               <a href="${buttonPage}" class="view-button">VIEW PRODUCT</a>
             </div>
-          </div>
-        `;
-        grid.innerHTML += card;
+          </div>`;
       });
-    } catch (error) {
-      console.error('Supabase Connection Error:', error);
-      grid.innerHTML = '<div class="loading-text">Error loading products from server. Please check configurations.</div>';
-    }
+    } catch (error) { grid.innerHTML = '<div class="loading-text">Error loading products.</div>'; }
   }
-
   window.onload = loadProducts;
 </script>
-
 </body>
 </html>
