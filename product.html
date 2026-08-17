@@ -99,10 +99,17 @@
     if(!productId) { document.body.innerHTML = "<h1>Product ID missing!</h1>"; return; }
     const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?id=eq.${productId}&select=*`;
     try {
-      const response = await fetch(url, { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } });
+      const response = await fetch(url, { 
+        method: 'GET',
+        headers: { 
+          'apikey': SUPABASE_ANON_KEY, 
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json'
+        } 
+      });
       const data = await response.json();
       if(!data || data.length === 0) { document.body.innerHTML = "<h1>Product not found!</h1>"; return; }
-      currentProduct = data[0];
+      currentProduct = data[0]; // Object nikaalne ke liye sahi array index set kiya
       
       document.getElementById('productTitle').innerText = currentProduct.name;
       document.getElementById('productSubtitle').innerText = currentProduct.description || '';
@@ -147,4 +154,3 @@
   window.onload = loadProductDetails;
 </script>
 </body>
-</html>
