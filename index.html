@@ -58,14 +58,30 @@
   const SUPABASE_PROJECT_ID = 'qyujpdlcdcgiqamxbmgx'; 
   const SUPABASE_ANON_KEY = 'sb_publishable_Q0pQ0SSWelTGjWkFEaHUKQ_KhxU0C_1'; 
   const TABLE_NAME = 'Products';
+
   async function loadProducts() {
     const grid = document.getElementById('supabase-products');
     const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?select=*`;
+    
     try {
-      const response = await fetch(url, { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } });
+      const response = await fetch(url, { 
+        method: 'GET',
+        headers: { 
+          'apikey': SUPABASE_ANON_KEY, 
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=representation'
+        } 
+      });
+      
       const products = await response.json();
       grid.innerHTML = ''; 
-      if (products.length === 0) { grid.innerHTML = '<div class="loading-text">No products found.</div>'; return; }
+      
+      if (!products || products.length === 0) { 
+        grid.innerHTML = '<div class="loading-text">No products found in table.</div>'; 
+        return; 
+      }
+      
       products.forEach(item => {
         let buttonPage = `product.html?id=${item.id}`;
         grid.innerHTML += `
@@ -80,7 +96,10 @@
             </div>
           </div>`;
       });
-    } catch (error) { grid.innerHTML = '<div class="loading-text">Error loading products.</div>'; }
+    } catch (error) { 
+      console.error(error);
+      grid.innerHTML = '<div class="loading-text">Connection Error. Please refresh the page.</div>'; 
+    }
   }
   window.onload = loadProducts;
 </script>
