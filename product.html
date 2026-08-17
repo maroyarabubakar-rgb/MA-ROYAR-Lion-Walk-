@@ -3,494 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MA ROYAR | PRODUCT DETAILS</title>
+<title>MA ROYAR | Product Details</title>
 <style>
-*{
-  box-sizing:border-box;
-}
-
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#050505;
-  color:#fff;
-}
-
-/* HEADER */
-.header{
-  text-align:center;
-  padding:28px 15px;
-  border-bottom:1px solid #292929;
-}
-
-.logo{
-  font-size:25px;
-  font-weight:900;
-  letter-spacing:4px;
-}
-
-.brand{
-  margin-top:8px;
-  color:#d4af37;
-  font-size:10px;
-  letter-spacing:3px;
-}
-
-/* MAIN */
-.container{
-  width:92%;
-  max-width:1000px;
-  margin:35px auto;
-}
-
-.product-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:35px;
-}
-
-/* MEDIA SLIDER */
-.media-slider{
-  width:100%;
-  overflow-x:auto;
-  overflow-y:hidden;
-  display:flex;
-  gap:12px;
-  scroll-snap-type:x mandatory;
-  scrollbar-width:none;
-  -webkit-overflow-scrolling:touch;
-  border-radius:15px;
-}
-
-.media-slider::-webkit-scrollbar{
-  display:none;
-}
-
-.media-item{
-  min-width:100%;
-  scroll-snap-align:start;
-}
-
-.media-item img,
-.media-item video{
-  width:100%;
-  height:350px;
-  object-fit:cover;
-  display:block;
-  border-radius:15px;
-  border:1px solid #292929;
-  background:#000;
-}
-
-/* SWIPE TEXT */
-.swipe-hint{
-  text-align:center;
-  color:#777;
-  font-size:10px;
-  letter-spacing:2px;
-  margin-top:10px;
-}
-
-/* PRODUCT INFO */
-.category{
-  color:#d4af37;
-  font-size:10px;
-  font-weight:bold;
-  letter-spacing:3px;
-  margin-bottom:12px;
-}
-
-.product-title{
-  margin:0 0 15px;
-  font-size:32px;
-  line-height:1.1;
-}
-
-.subtitle{
-  color:#999;
-  font-size:13px;
-  line-height:1.7;
-}
-
-.price{
-  margin:18px 0;
-  color:#d4af37;
-  font-size:27px;
-  font-weight:900;
-}
-
-.line{
-  height:1px;
-  background:#292929;
-  margin:18px 0;
-}
-
-/* MORE DETAILS */
-.more-details{
-  background:#101010;
-  border:1px solid #292929;
-  border-radius:12px;
-  margin:20px 0;
-  overflow:hidden;
-}
-
-.more-details summary{
-  padding:15px;
-  background:#d4af37;
-  color:#000;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:2px;
-  cursor:pointer;
-  list-style:none;
-}
-
-.more-details summary::-webkit-details-marker{
-  display:none;
-}
-
-.more-content{
-  padding:18px;
-  color:#999;
-  font-size:13px;
-  line-height:1.8;
-}
-
-.more-content p {
-  margin: 8px 0;
-}
-
-.more-content strong{
-  color:#fff;
-}
-
-/* FEATURES */
-.features{
-  list-style:none;
-  padding:0;
-  margin:0 0 20px;
-}
-
-.features li{
-  color:#ccc;
-  font-size:12px;
-  margin-bottom:9px;
-}
-
-.features li::before{
-  content:"✓";
-  color:#d4af37;
-  margin-right:8px;
-  font-weight:bold;
-}
-
-/* ORDER NOW */
-.order-btn{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:8px;
-  background:#d4af37;
-  color:#000;
-  font-weight:900;
-  font-size:14px;
-  letter-spacing:2px;
-  cursor:pointer;
-}
-
-/* ORDER FORM */
-.order-form{
-  display:none;
-  margin-top:18px;
-  padding:20px;
-  background:#101010;
-  border:1px solid #292929;
-  border-radius:14px;
-}
-
-.order-form h2{
-  color:#d4af37;
-  font-size:18px;
-  letter-spacing:2px;
-  margin:0 0 15px;
-}
-
-label{
-  display:block;
-  margin:12px 0 6px;
-  color:#ccc;
-  font-size:10px;
-  letter-spacing:1px;
-}
-
-input,
-select,
-textarea{
-  width:100%;
-  padding:12px;
-  border:1px solid #333;
-  border-radius:7px;
-  background:#050505;
-  color:#fff;
-  outline:none;
-  font-size:13px;
-}
-
-textarea{
-  height:80px;
-  resize:vertical;
-}
-
-/* EASYPAISA */
-.payment-box{
-  margin-top:18px;
-  padding:16px;
-  border-radius:9px;
-  border:1px solid #d4af37;
-  background:#0b0b0b;
-  color:#aaa;
-  font-size:12px;
-  line-height:1.7;
-}
-
-.payment-title{
-  color:#d4af37;
-  font-weight:900;
-  font-size:14px;
-  letter-spacing:1px;
-  margin-bottom:10px;
-}
-
-.payment-name{
-  color:#fff;
-  font-size:15px;
-  font-weight:900;
-}
-
-.payment-number{
-  color:#fff;
-  font-size:17px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-/* GREEN BUTTON */
-.payment-btn{
-  width:100%;
-  margin-top:15px;
-  padding:15px;
-  border:0;
-  border-radius:8px;
-  background:#25D366;
-  color:#000;
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:1px;
-  cursor:pointer;
-}
-
-/* DESCRIPTION */
-.description{
-  margin-top:45px;
-  padding:24px;
-  border:1px solid #292929;
-  border-radius:15px;
-  background:#101010;
-}
-
-.description h2{
-  color:#d4af37;
-  font-size:18px;
-  letter-spacing:2px;
-}
-
-.description p{
-  color:#999;
-  font-size:13px;
-  line-height:1.8;
-}
-
-/* ERROR MESSAGES */
-.loading-box {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 50px;
-  font-size: 18px;
-  color: #d4af37;
-}
-
-/* MOBILE */
-@media(max-width:750px){
-  .product-box{
-    grid-template-columns:1fr;
-    gap:25px;
-  }
-  .media-item img,
-  .media-item video{
-    height:300px;
-  }
-  .product-title{
-    font-size:28px;
-  }
-}
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Arial, sans-serif; background: #050505; color: #fff; }
+  .header { text-align: center; padding: 28px 15px; border-bottom: 1px solid #292929; }
+  .logo { font-size: 25px; font-weight: 900; letter-spacing: 4px; }
+  .brand { margin-top: 8px; color: #d4af37; font-size: 10px; letter-spacing: 3px; }
+  .container { width: 92%; max-width: 1000px; margin: 35px auto; }
+  .product-box { display: grid; grid-template-columns: 1fr 1fr; gap: 35px; }
+  .media-slider { width: 100%; overflow-x: auto; display: flex; gap: 12px; scroll-snap-type: x mandatory; border-radius: 15px; }
+  .media-item { min-width: 100%; scroll-snap-align: start; }
+  .media-item img, .media-item video { width: 100%; height: 350px; object-fit: cover; display: block; border-radius: 15px; border: 1px solid #292929; background: #000; }
+  .swipe-hint { text-align: center; color: #777; font-size: 10px; margin-top: 10px; }
+  .category { color: #d4af37; font-size: 10px; font-weight: bold; letter-spacing: 3px; margin-bottom: 12px; }
+  .product-title { margin: 0 0 15px; font-size: 32px; line-height: 1.1; }
+  .subtitle { color: #999; font-size: 13px; line-height: 1.7; }
+  .price { margin: 18px 0; color: #d4af37; font-size: 27px; font-weight: 900; }
+  .line { height: 1px; background: #292929; margin: 18px 0; }
+  .more-details { background: #101010; border: 1px solid #292929; border-radius: 12px; margin: 20px 0; overflow: hidden; }
+  .more-details summary { padding: 15px; background: #d4af37; color: #000; font-size: 13px; font-weight: 900; cursor: pointer; }
+  .more-content { padding: 18px; color: #999; font-size: 13px; line-height: 1.8; }
+  .features { list-style: none; padding: 0; margin: 0 0 20px; }
+  .features li { color: #ccc; font-size: 12px; margin-bottom: 9px; }
+  .features li::before { content: "✓ "; color: #d4af37; font-weight: bold; }
+  .order-btn { width: 100%; padding: 15px; border: 0; border-radius: 8px; background: #d4af37; color: #000; font-weight: 900; font-size: 14px; cursor: pointer; }
+  .order-form { display: none; margin-top: 18px; padding: 20px; background: #101010; border: 1px solid #292929; border-radius: 14px; }
+  .order-form h2 { color: #d4af37; font-size: 18px; margin: 0 0 15px; }
+  label { display: block; margin: 12px 0 6px; color: #ccc; font-size: 10px; }
+  input, select, textarea { width: 100%; padding: 12px; border: 1px solid #333; border-radius: 7px; background: #050505; color: #fff; font-size: 13px; }
+  .payment-box { margin-top: 18px; padding: 16px; border-radius: 9px; border: 1px solid #d4af37; background: #0b0b0b; color: #aaa; font-size: 12px; }
+  .payment-title { color: #d4af37; font-weight: 900; margin-bottom: 10px; }
+  .payment-name, .payment-number { color: #fff; font-weight: 900; }
+  .payment-btn { width: 100%; margin-top: 15px; padding: 15px; border: 0; border-radius: 8px; background: #25D366; color: #000; font-weight: 900; cursor: pointer; }
+  .description { margin-top: 45px; padding: 24px; border: 1px solid #292929; border-radius: 15px; background: #101010; }
+  .description h2 { color: #d4af37; font-size: 18px; }
+  .description p { color: #999; font-size: 13px; line-height: 1.8; }
+  @media(max-width:750px){ .product-box { grid-template-columns: 1fr; gap: 25px; } .media-item img, .media-item video { height: 300px; } .product-title { font-size: 28px; } }
 </style>
 </head>
 <body>
-
-<!-- HEADER -->
 <header class="header">
   <div class="logo">MA ROYAR</div>
   <div class="brand">TRENDING | ROYAL | DECORATE</div>
 </header>
-
 <main class="container">
-  <div class="product-box" id="product-content-box">
-    
-    <!-- Initial Loading Text -->
-    <div class="loading-box" id="loading-state">
-      Loading Premium Product Details...
-    </div>
-
-    <!-- LEFT SIDE: MEDIA SLIDER -->
-    <div id="media-section" style="display: none;">
-      <div class="media-slider" id="dynamic-media-slider">
-        <!-- Media Items Will Inject Here -->
-      </div>
+  <div class="product-box">
+    <div>
+      <div class="media-slider" id="mediaSlider"><div class="loading-text">Loading media...</div></div>
       <div class="swipe-hint">SWIPE RIGHT TO SEE MORE</div>
     </div>
-
-    <!-- RIGHT SIDE: PRODUCT DETAILS & FORM -->
-    <div id="details-section" style="display: none;">
+    <div>
       <div class="category">MA ROYAR • TRENDING PRODUCT</div>
-      <h1 class="product-title" id="dyn-title">Loading...</h1>
-      <p class="subtitle" id="dyn-subtitle"></p>
-      
-      <div class="price" id="dyn-price">RS. 0</div>
+      <h1 class="product-title" id="productTitle">Loading...</h1>
+      <p class="subtitle" id="productSubtitle"></p>
+      <div class="price" id="productPrice"></div>
       <div class="line"></div>
-
-      <!-- MORE DETAILS -->
       <details class="more-details">
         <summary>MORE DETAILS</summary>
-        <div class="more-content" id="dyn-more-content">
-          <!-- Dynamic Technical Rows -->
-        </div>
+        <div class="more-content" id="moreContent"></div>
       </details>
-
-      <!-- FEATURES -->
-      <ul class="features" id="dyn-features">
-        <!-- Features Bullet Points -->
-      </ul>
-
-      <!-- ORDER NOW BUTTON -->
+      <ul class="features" id="featuresList"></ul>
       <button class="order-btn" onclick="showOrderForm()">ORDER NOW</button>
-
-      <!-- CUSTOMER ORDER FORM -->
       <div id="orderForm" class="order-form">
         <h2>CUSTOMER ORDER</h2>
-
-        <label>CUSTOMER NAME</label>
-        <input id="customerName" type="text" placeholder="ENTER YOUR FULL NAME">
-
-        <label>PHONE NUMBER</label>
-        <input id="phone" type="tel" placeholder="03XXXXXXXXX">
-
-        <label>ALTERNATIVE PHONE NUMBER</label>
-        <input id="alternativePhone" type="tel" placeholder="03XXXXXXXXX">
-
-        <label>CITY</label>
-        <input id="city" type="text" placeholder="ENTER YOUR CITY">
-
-        <label>COMPLETE ADDRESS</label>
-        <textarea id="address" placeholder="HOUSE NUMBER, STREET, AREA, SECTOR..."></textarea>
-
+        <label>CUSTOMER NAME</label><input id="customerName" type="text" placeholder="ENTER YOUR FULL NAME">
+        <label>PHONE NUMBER</label><input id="phone" type="tel" placeholder="03XXXXXXXXX">
+        <label>ALTERNATIVE PHONE NUMBER</label><input id="alternativePhone" type="tel" placeholder="03XXXXXXXXX">
+        <label>CITY</label><input id="city" type="text" placeholder="ENTER YOUR CITY">
+        <label>COMPLETE ADDRESS</label><textarea id="address" placeholder="HOUSE NUMBER..."></textarea>
         <label>QUANTITY</label>
-        <select id="quantity" onchange="updateTotalBill()">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-
-        <!-- EASYPAISA PAYMENT BOX -->
+        <select id="quantity"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select>
         <div class="payment-box">
           <div class="payment-title">💳 ONLINE PAYMENT — EASYPAISA</div>
-          <div>ACCOUNT NAME:</div>
-          <div class="payment-name">MUHAMMAD ABUBAKAR</div>
-          <br>
-          <div>EASYPAISA NUMBER:</div>
-          <div class="payment-number">0318 0991880</div>
-          <br>
-          <div>TOTAL PRICE: <strong id="dyn-form-total">RS. 0</strong></div>
-          <br>
-          PLEASE SEND THE PAYMENT TO THE ABOVE EASYPAISA ACCOUNT AND KEEP YOUR PAYMENT RECEIPT / TRANSACTION ID.
-          <br><br>
-          AFTER PAYMENT, SUBMIT YOUR ORDER DETAILS THROUGH WHATSAPP.
+          <div>ACCOUNT NAME: <span class="payment-name">MUHAMMAD ABUBAKAR</span></div><br>
+          <div>EASYPAISA NUMBER: <span class="payment-number">0318 0991880</span></div><br>
+          <div>TOTAL PRICE: <strong id="formTotalPrice"></strong></div><br>
+          PLEASE SEND THE PAYMENT AND SUBMIT DETAILS.
         </div>
-
-        <!-- SUBMIT BUTTON -->
-        <button class="payment-btn" onclick="placeOrder()">SUBMIT ORDER & PAYMENT DETAILS</button>
+        <button class="payment-btn" onclick="placeOrder()">SUBMIT ORDER VIA WHATSAPP</button>
       </div>
-
     </div>
   </div>
-
-  <!-- DESCRIPTION BOX -->
-  <section class="description" id="desc-section" style="display: none;">
-    <h2>PRODUCT DETAILS</h2>
-    <p id="dyn-long-description"></p>
-  </section>
+  <section class="description"><h2>PRODUCT DETAILS</h2><p id="bottomDescription"></p></section>
 </main>
-
-<!-- SUPABASE INTEGRATION SCRIPT -->
 <script>
-  // Supabase Configurations
   const SUPABASE_PROJECT_ID = 'qyujpdlcdcgiqamxbmgx';
-  const SUPABASE_ANON_KEY = 'sb_publishable_QOpqoSbqjpdXQYwGgdCdgcoVGuVGuVGuVGuVGuVGuVGuVGuVGu';
+  const SUPABASE_ANON_KEY = 'sb_publishable_Q0pQ0SSWelTGjWkFEaHUKQ_KhxU0C_1';
   const TABLE_NAME = 'Products';
-
-  // Global Product Data Variable
   let currentProduct = null;
 
-  async function loadSingleProduct() {
-    // 1. URL search text se name identify karein (e.g. power-bank.html ya moon-lamp.html)
-    const pagePath = window.location.pathname.toLowerCase();
-    let searchKeyword = "";
-
-    if (pagePath.includes('power-bank')) {
-      searchKeyword = 'power bank';
-    } else {
-      searchKeyword = 'moon lamp'; // Default Fallback
-    }
-
+  async function loadProductDetails() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+    if(!productId) { document.body.innerHTML = "<h1>Product ID missing!</h1>"; return; }
+    const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?id=eq.${productId}&select=*`;
     try {
-      // 2. Supabase API call to fetch matching row
-      const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?name=ilike.*${searchKeyword}*&select=*`;
-      const response = await fetch(url, {
-        headers: {
-          'apikey': SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
-        }
-      });
-
-      if (!response.ok) throw new Error("Database network error.");
+      const response = await fetch(url, { headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` } });
       const data = await response.json();
+      if(!data || data.length === 0) { document.body.innerHTML = "<h1>Product not found!</h1>"; return; }
+      currentProduct = data[0];
+      
+      document.getElementById('productTitle').innerText = currentProduct.name;
+      document.getElementById('productSubtitle').innerText = currentProduct.description || '';
+      document.getElementById('productPrice').innerText = `RS. ${Number(currentProduct.price).toLocaleString()}`;
+      document.getElementById('formTotalPrice').innerText = `RS. ${Number(currentProduct.price).toLocaleString()}`;
+      document.getElementById('bottomDescription').innerText = currentProduct.details || currentProduct.description || '';
 
-      if (!data || data.length === 0) {
-        document.getElementById('loading-state').innerText = "Product Not Found in Database.";
-        return;
+      let mediaHtml = '';
+      if(currentProduct.video_url) mediaHtml += `<div class="media-item"><video controls playsinline><source src="${currentProduct.video_url}" type="video/mp4"></video></div>`;
+      if(currentProduct.image_url) mediaHtml += `<div class="media-item"><img src="${currentProduct.image_url}"></div>`;
+      if(currentProduct.image_url_2) mediaHtml += `<div class="media-item"><img src="${currentProduct.image_url_2}"></div>`;
+      if(currentProduct.image_url_3) mediaHtml += `<div class="media-item"><img src="${currentProduct.image_url_3}"></div>`;
+      document.getElementById('mediaSlider').innerHTML = mediaHtml || '<div class="loading-text">No media found.</div>';
+
+      if(currentProduct.features) {
+        document.getElementById('featuresList').innerHTML = currentProduct.features.split(',').map(f => `<li>${f.trim().toUpperCase()}</li>`).join('');
       }
+      
+      let detailsHtml = `<p><strong>PRODUCT:</strong> ${currentProduct.name.toUpperCase()}</p>`;
+      if(currentProduct.description) detailsHtml += `<p><strong>DESIGN:</strong> ${currentProduct.description.toUpperCase()}</p>`;
+      detailsHtml += `<p><strong>PRICE:</strong> RS. ${Number(currentProduct.price).toLocaleString()}</p>`;
+      document.getElementById('moreContent').innerHTML = detailsHtml;
 
-      currentProduct = data[0]; // Assign to global variable
-      renderProductData(currentProduct);
-
-    } catch (error) {
-      console.error(error);
-      document.getElementById('loading-state').innerText = "Error loading product parameters.";
-    }
+    } catch(e) { document.body.innerHTML = "<h1>Error loading details.</h1>"; }
   }
 
-  function renderProductData(product) {
-    // Hide Loading, Show Layout Sections
-    document.getElementById('loading-state').style.display = "none";
-  
+  function showOrderForm(){ document.getElementById("orderForm").style.display = "block"; document.getElementById("orderForm").scrollIntoView({ behavior:"smooth" }); }
+
+  function placeOrder(){
+    let name = document.getElementById("customerName").value.trim();
+    let phone = document.getElementById("phone").value.trim();
+    let city = document.getElementById("city").value.trim();
+    let address = document.getElementById("address").value.trim();
+    let quantity = document.getElementById("quantity").value;
+    if(!name || !phone || !city || !address){ alert("PLEASE FILL ALL REQUIRED DETAILS."); return; }
+    
+    let totalAmount = currentProduct.price * quantity;
+    let message = `NEW ORDER - MA ROYAR\n\nPRODUCT: ${currentProduct.name}\nPRICE: RS. ${Number(currentProduct.price).toLocaleString()}\nQUANTITY: ${quantity}\nTOTAL: RS. ${totalAmount.toLocaleString()}\n\nPAYMENT: EASYPAISA\nCUSTOMER NAME: ${name}\nPHONE: ${phone}\nCITY: ${city}\nADDRESS: ${address}`;
+    window.open(`https://wa.me{encodeURIComponent(message)}`, "_blank");
+  }
+
+  window.onload = loadProductDetails;
+</script>
+</body>
+</html>
