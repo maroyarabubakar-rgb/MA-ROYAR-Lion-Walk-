@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -60,7 +60,8 @@
 
   async function loadProducts() {
     const grid = document.getElementById('supabase-products');
-    const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?select=name,price,image_url`;
+    // Ab hum poori table ka saara data bina kisi column constraint ke mangayenge taake error na aaye
+    const url = `https://${SUPABASE_PROJECT_ID}.supabase.co/rest/v1/${TABLE_NAME}?select=*`;
     
     try {
       const response = await fetch(url, { 
@@ -80,16 +81,25 @@
       }
       
       products.forEach(item => {
-        // Id na hone ki wajah se direct product page par name pass kar rahe hain
-        let buttonPage = `product.html?name=${encodeURIComponent(item.name)}`;
+        // Yeh line capital aur small dono lafzon ko khud handle karegi
+        let pName = item.name || item.Name || 'Premium Product';
+        let pPrice = item.price || item.price || item.Price || '0';
+        let pImage = item.image_url || item.Image_url || item.image_url || '';
+        
+        let buttonPage = `product.html?name=${encodeURIComponent(pName.toString().trim())}`;
+        
+        let finalImageUrl = pImage ? pImage.toString().trim() : '';
+        if (finalImageUrl && !finalImageUrl.startsWith('http')) {
+          finalImageUrl = `https://github.io{finalImageUrl}`;
+        }
         
         grid.innerHTML += `
           <div class="product-card">
-            <img class="product-image" src="${item.image_url || 'placeholder.jpg'}" alt="${item.name}">
+            <img class="product-image" src="${finalImageUrl || 'placeholder.jpg'}" alt="${pName}" onerror="this.src='https://github.io'">
             <div class="product-info">
               <div class="product-label">TRENDING PRODUCT</div>
-              <div class="product-name">${(item.name || '').toUpperCase()}</div>
-              <div class="price">RS. ${item.price ? Number(item.price).toLocaleString() : '0'}</div>
+              <div class="product-name">${pName.toUpperCase()}</div>
+              <div class="price">RS. ${Number(pPrice).toLocaleString()}</div>
               <a href="${buttonPage}" class="view-button">VIEW PRODUCT</a>
             </div>
           </div>`;
@@ -102,4 +112,4 @@
   window.onload = loadProducts;
 </script>
 </body>
-</html>
+  </html>
